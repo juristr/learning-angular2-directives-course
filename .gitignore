@@ -1,1 +1,8 @@
-# Files to ignore
+
+node_modules
+**/bower_packages
+**/jspm_packages
+**/typings
+
+src/**/*.js
+src/**/*.js.map
