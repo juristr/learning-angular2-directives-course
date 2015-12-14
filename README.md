@@ -1,15 +1,27 @@
-Learning Angular 2 Directives
----
+# Learning Angular 2 directives
 
-This is the code repository for my course on ["Learning Angular 2 Directives"](https://www.packtpub.com/).
+Getting started with some TypeScript and ES6 features.
 
-## Structure
+## Install
 
-The different sections structured into dedicated branches, so use your Git
-skills to switch between them :smiley:.
+Install the latest dependencies using 
 
-1. Overview
-  - Section 1.1: Course overview
-  - Section 1.2: Project setup
-  - Section 1.3: All about components
-1. ...
+```
+$ npm i
+```
+
+## Run
+
+Execute the TypeScript compiler
+
+```
+$ npm run tsc
+```
+
+and in another terminal window
+
+```
+$ npm start
+```
+
+...to start the app in the browser 
