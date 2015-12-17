@@ -3,7 +3,7 @@ var Person = function (name) {
 }
 
 Person.prototype.registerSayHello = function() {
-	document.getElementById('someButton').addEventListener('click', function() {
+	document.getElementById('someButton').addEventListener('click', () => {
 		console.log('Hi, I am a ' + this + ' and my name is ' + this.name);
 	});
 }
