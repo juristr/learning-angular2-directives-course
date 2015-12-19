@@ -1,0 +1,12 @@
+{
+  "name": "jquery-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
