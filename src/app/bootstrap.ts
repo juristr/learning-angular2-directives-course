@@ -7,11 +7,17 @@ import { HelloAngular2 } from './helloAngular2';
 @Component({
     selector: 'app',
     template: `
-        <hello-angular who="Juri"></hello-angular>
+        <hello-angular who="Juri" (onSayHello)="didGreet($event);"></hello-angular>
     `,
     directives: [ HelloAngular2 ]
 })
-class AppCmp {}
+class AppCmp {
+    
+    didGreet(value) {
+        console.log(value);
+    }
+    
+}
 
 
 bootstrap(AppCmp, [])
