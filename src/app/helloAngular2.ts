@@ -1,9 +1,9 @@
-import { Component, View } from 'angular2/core';
+import { Component, Input } from 'angular2/core';
 
 @Component({
-  selector: 'hello-angular'
+  selector: 'hello-angular',
+  template: '<p>Hello, {{ who }}</p>'
 })
-@View({
-  template: '<p>Hello, Angular2</p>'
-})
-export class HelloAngular2 {}
+export class HelloAngular2 {
+    @Input() who: string;
+}
