@@ -1,20 +1,9 @@
-import {Directive, Component, ElementRef, Renderer} from 'angular2/core';
-// import {RouteConfig, Router} from 'angular2/router';
-// import {Http, Headers} from 'angular2/http';
-
-// import {ROUTER_DIRECTIVES} from 'angular2/router';
-
-/*
-  App directives
-*/
-import { HeaderCmp } from './header';
-import { NavCmp } from './sidebar';
-import { MainCmp } from './main';
+import { Component } from 'angular2/core';
+import * as material from 'material';
 
 
 @Component({
   selector: 'app',
-  directives: [ /*ROUTER_DIRECTIVES,*/ HeaderCmp, NavCmp, MainCmp],
   template: `
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
         <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
@@ -42,7 +31,7 @@ import { MainCmp } from './main';
         </header>
         <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
             <header class="demo-drawer-header">
-                <img src="images/user.jpg" class="demo-avatar">
+                <img src="img/user.jpg" class="demo-avatar">
                 <div class="demo-avatar-dropdown">
                     <span>hello@example.com</span>
                     <div class="mdl-layout-spacer"></div>

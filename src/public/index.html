@@ -41,11 +41,10 @@
   -->
     <script src="./lib/es6-shim.js"></script>
 </head>
-
 <body>
-    <app>Loading</app>
+    
+    <app>Loading...</app>
 
-    <script src="./lib/material.min.js"></script>
     <!-- ES6-related imports -->
     <script src="../../node_modules/systemjs/dist/system.src.js"></script>
     <script src="../../node_modules/es6-shim/es6-shim.js"></script>
@@ -56,14 +55,15 @@
     <script src="../../node_modules/angular2/bundles/http.dev.js"></script>
     <script>
         System.config({
-        "defaultJSExtensions":true,
-        "paths":{
-          "*":"/node_modules/*"
-        }
-    });
-    System.import('../app/bootstrap').catch(console.log.bind(console));
+            "defaultJSExtensions":true,
+            "paths":{
+                'angular2/*': '/node_modules/angular2/*',
+                'rxjs/*': '/node_modules/rxjs/*',
+                'material': './lib/material.min.js'
+            }
+        });
+        System.import('../app/bootstrap')
+            .catch(console.log.bind(console));
     </script>
-
 </body>
-
 </html>
