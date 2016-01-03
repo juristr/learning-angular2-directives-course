@@ -1,7 +1,7 @@
 import { Component } from 'angular2/core';
 
 import { AppMenuCmp } from './menu.component';
-import { UserProfileCmp } from './user-profile.component';
+import { UserProfileCmp } from '../user-profile/user-profile.component';
 
 @Component({
     selector: 'app-sidebar',
