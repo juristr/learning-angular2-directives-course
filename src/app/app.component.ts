@@ -1,9 +1,9 @@
 import { Component } from 'angular2/core';
 import * as material from 'material';
 
-import { HeaderCmp } from './header';
-import { SidebarCmp } from './sidebar';
-import { DashboardCmp  } from './dashboard';
+import { HeaderCmp } from './header.component';
+import { SidebarCmp } from './sidebar.component';
+import { DashboardCmp  } from './dashboard.component';
 
 
 @Component({

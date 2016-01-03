@@ -1,7 +1,7 @@
 import {bootstrap} from 'angular2/platform/browser';
 import * as materialLite from 'material';
 
-import {App} from './app';
+import {App} from './app.component';
 
 bootstrap(App, [])
     .then(function(){
