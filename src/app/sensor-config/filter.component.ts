@@ -16,9 +16,6 @@ export class FilterComponent {
     
     onFilter(value) {
         this.filterValue = value;
-    }
-    
-    execFilter(sensorName) {
-        this.change.emit(sensorName);
+        this.change.emit(value);
     }
 }
