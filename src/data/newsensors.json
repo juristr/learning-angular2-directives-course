@@ -1,7 +1,7 @@
 [
     {
-        "name": "S1-001XX",
-        "description": "Temperature and humidity sensor",
+        "name": "S1-00134",
+        "description": "Temperature sensor",
         "type": "temperature",
         "data": {
             "current": 21,
@@ -11,25 +11,22 @@
         }
     },
     {
-        "name": "S1-002XX",
-        "description": "Temperature and humidity sensor",
-        "type": "temperature",
+        "name": "S1-00211",
+        "description": "Humidity sensor",
+        "type": "humidity",
         "data": {
-            "current": 21,
-            "min": 17,
-            "max": 23,
-            "avg": 20
+            "current": 70,
+            "min": 50,
+            "max": 72,
+            "avg": 60
         }
     },
     {
-        "name": "S1-003XX",
-        "description": "Temperature and humidity sensor",
-        "type": "temperature",
+        "name": "S1-00345",
+        "description": "Light switch",
+        "type": "switch",
         "data": {
-            "current": 21,
-            "min": 17,
-            "max": 23,
-            "avg": 20
+            "value": "off"
         }
     }        
 ]

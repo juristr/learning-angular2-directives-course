@@ -3,7 +3,8 @@ import { Http } from 'angular2/http';
 import 'rxjs/Rx';
 
 export interface Sensor {
-    name: string
+    name: string,
+    description: string
 }
 
 @Injectable()

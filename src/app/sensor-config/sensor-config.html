@@ -7,6 +7,8 @@
         Scan for the list of available sensors in your environment and configure them for your dashboard.
     </p>
 
+    <filter (change)="refreshSensors($event)" #filterCmp></filter>
+    
     <div class="mdl-cell--12-col">
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" (click)="refreshSensors()">
             Scan for sensors
@@ -24,7 +26,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="#item of sensors">
+            <tr *ngFor="#item of sensors | sensorFilter: filterCmp.filterValue">
                 <td class="mdl-data-table__cell--non-numeric">{{ item.name }}</td>
                 <td class="mdl-data-table__cell--non-numeric">{{ item.description }}</td>
                 <td></td>

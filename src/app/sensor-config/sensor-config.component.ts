@@ -1,10 +1,14 @@
 import {Component, OnInit} from 'angular2/core';
 
 import { SensorService, Sensor } from '../core/sensor';
+import { FilterComponent } from './filter.component';
+import { SensorPipe } from './sensor.pipe';
 
 @Component({
     selector: 'configure',
     moduleId: module.id,
+    directives: [FilterComponent],
+    pipes: [SensorPipe],
     templateUrl: 'sensor-config.html'
 })
 
@@ -14,7 +18,10 @@ export class SensorConfigureComponent implements OnInit {
     constructor(public sensorService: SensorService) {    
     }
     
-    refreshSensors() {
+    refreshSensors(filterData) {
+        console.log('Got refresh with filter', filterData);
+        
+        
         this.sensorService.discoverSensors()
             .subscribe(data => {
                 this.sensors = data;
