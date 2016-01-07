@@ -1,0 +1,35 @@
+<div class="app-page-content mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+
+    <h1 class="mdl-typography--display-3">
+        List of sensors
+    </h1>
+    <p class="mdl-typography--title">
+        Scan for the list of available sensors in your environment and configure them for your dashboard.
+    </p>
+
+    <div class="mdl-cell--12-col">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" (click)="refreshSensors()">
+            Scan for sensors
+        </button>
+    </div>
+    
+    <hr />
+    
+    <table class="mdl-data-table mdl-js-data-table mdl-cell--12-col" *ngIf="sensors && sensors.length > 0">
+        <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">Name</th>
+                <th class="mdl-data-table__cell--non-numeric">Description</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="#item of sensors">
+                <td class="mdl-data-table__cell--non-numeric">{{ item.name }}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{ item.description }}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
