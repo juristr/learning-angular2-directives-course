@@ -3,9 +3,9 @@ import { Sensor } from '../core/sensor';
 import { SensorFilter } from './filter.component';
 
 @Pipe({
-    name: 'sensorFilter'
+    name: 'filterSensor'
 })
-export class SensorPipe {
+export class FilterSensor {
     transform(value, [filterValue]:SensorFilter[]) {
         let result = value
                 .filter((entry: Sensor) => {
