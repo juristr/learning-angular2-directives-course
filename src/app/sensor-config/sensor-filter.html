@@ -1,9 +1,5 @@
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col">
   <div class="mdl-card__supporting-text">
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="sensorNameFilter" #sensorName (keyup)="fulltextFilterChanged(sensorName.value)">
-        <label class="mdl-textfield__label" for="sensorNameFilter">Sensor Name...</label>
-    </div>
     <div>
         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-all">
             <input type="radio" id="option-all" class="mdl-radio__button" name="options" value="" selected (change)="categoryChanged(undefined)">

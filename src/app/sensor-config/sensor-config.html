@@ -19,7 +19,6 @@
     
     <hr />
     
-    <!--<sensor-list [sensors]="sensors | sensorFilter: filterCmp.filter"></sensor-list>-->
-    <sensor-list [sensors]="sensors | filterSensor: { fullText: 'humid', category: 'humidity' }"></sensor-list>
+    <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory"></sensor-list>
     
 </div>
