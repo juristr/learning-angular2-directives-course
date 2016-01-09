@@ -3,13 +3,13 @@ import {Component, OnInit} from 'angular2/core';
 import { SensorService, Sensor } from '../core/sensor';
 import { FilterComponent, SensorFilter } from './filter.component';
 import { SensorListComponent } from './sensor-list.component';
-import { SensorPipe } from './sensor.pipe';
+import { FilterSensor } from './filter-sensor.pipe';
 
 @Component({
     selector: 'configure',
     moduleId: module.id,
-    directives: [FilterComponent, SensorListComponent],
-    pipes: [SensorPipe],
+    directives: [ FilterComponent, SensorListComponent ],
+    pipes: [FilterSensor],
     templateUrl: 'sensor-config.html'
 })
 
@@ -23,7 +23,7 @@ export class SensorConfigureComponent implements OnInit {
     refreshSensors(filterData: SensorFilter) {
         this.sensorService.discoverSensors()
             .subscribe(data => {
-                this.sensors = new SensorPipe().transform(data, [filterData]);
+                this.sensors = new FilterSensor().transform(data, [filterData]);
             });
     }
 
