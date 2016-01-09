@@ -1,7 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 
 import { SensorService, Sensor } from '../core/sensor';
-import { FilterComponent } from './filter.component';
+import { FilterComponent, SensorFilter } from './filter.component';
 import { SensorListComponent } from './sensor-list.component';
 import { SensorPipe } from './sensor.pipe';
 
@@ -14,17 +14,16 @@ import { SensorPipe } from './sensor.pipe';
 })
 
 export class SensorConfigureComponent implements OnInit {
-    private sensors: Sensor[] = []; 
+    private filter: string;
+    private sensors: Sensor[] = [];
 
     constructor(public sensorService: SensorService) {    
     }
     
-    refreshSensors(filterData) {
-        console.log('Got refresh with filter', filterData);
-        
+    refreshSensors(filterData: SensorFilter) {
         this.sensorService.discoverSensors()
             .subscribe(data => {
-                this.sensors = data;
+                this.sensors = new SensorPipe().transform(data, [filterData]);
             });
     }
 

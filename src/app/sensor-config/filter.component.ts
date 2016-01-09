@@ -1,21 +1,38 @@
 import {Component, Output, EventEmitter} from 'angular2/core';
 
+export interface SensorFilter {
+    fullText: string,
+    category: string
+}
+
 @Component({
     selector: 'filter',
     moduleId: module.id,
     templateUrl: 'filter.html'
 })
-
 export class FilterComponent {
-    public filterValue: string;
+    public filter: SensorFilter = { fullText: '', category: null };
+    private categories: string[];
     
     // change event
-    @Output() change: EventEmitter<string> = new EventEmitter<string>();
+    @Output() filterChange: EventEmitter<SensorFilter> = new EventEmitter<SensorFilter>();
 
-    constructor() { }
+    constructor() {
+        // fill with some static predefined categories
+        this.categories = [
+            'temperature',
+            'humidity',
+            'switch'
+        ];       
+    }
     
-    onFilter(value) {
-        this.filterValue = value;
-        this.change.emit(value);
+    categoryChanged(value) {
+        this.filter.category = value;
+        this.filterChange.emit(this.filter);
+    }
+    
+    fulltextFilterChanged(value) {
+        this.filter.fullText = value;
+        this.filterChange.emit(this.filter);
     }
 }

@@ -1,27 +1,34 @@
 import { Pipe } from 'angular2/core';
 import { Sensor } from '../core/sensor';
+import { SensorFilter } from './filter.component';
 
 @Pipe({
     name: 'sensorFilter'
 })
 export class SensorPipe {
-    transform(value, [filterValue]:string[]) {
-        return value.filter((entry: Sensor) => {
-            if(filterValue && filterValue.length > 0) {
-                let filterVal = filterValue.toLowerCase();
-                let entryName = entry.name.toLowerCase();
-                let entryDesc = entry.description.toLowerCase();
-                            
-                
-                if(entryName.includes(filterValue.toLowerCase()) || entryDesc.includes(filterValue.toLowerCase())) {
-                    return value;
-                } else {
-                    return null;
-                }
-                
-            } else {
-                return entry;
-            }
-        }
+    transform(value, [filterValue]:SensorFilter[]) {
+        let result = value
+                .filter((entry: Sensor) => {
+                    // console.log(filterValue.category || 'no category');
+                    if(filterValue && filterValue.category) {
+                        return entry.type === filterValue.category;
+                    } else {
+                        return true;
+                    }
+                })
+                .filter((entry: Sensor) => {
+                    if(filterValue && filterValue.fullText && filterValue.fullText !== '') {
+                        let filterVal = filterValue.fullText.toLowerCase();
+                        let entryName = entry.name.toLowerCase();
+                        let entryDesc = entry.description.toLowerCase();
+                        
+                        return (entryName.includes(filterVal) || entryDesc.includes(filterVal))
+                    } else {
+                        // don't filter
+                        return true;
+                    }
+                });
+        console.log(result);
+        return result;
     }
 }

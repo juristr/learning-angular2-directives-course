@@ -6,8 +6,6 @@
     <p class="mdl-typography--title">
         Scan for the list of available sensors in your environment and configure them for your dashboard.
     </p>
-
-    <filter (change)="refreshSensors($event)" #filterCmp></filter>
     
     <div class="mdl-cell--12-col">
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" (click)="refreshSensors()">
@@ -16,7 +14,12 @@
     </div>
     
     <hr />
+
+    <filter (filterChange)="refreshSensors($event)" #filterCmp></filter>
     
-    <sensor-list [sensors]="sensors | sensorFilter: filterCmp.filterValue"></sensor-list>
+    <hr />
+    
+    <!--<sensor-list [sensors]="sensors | sensorFilter: filterCmp.filter"></sensor-list>-->
+    <sensor-list [sensors]="sensors"></sensor-list>
     
 </div>
