@@ -6,11 +6,11 @@ export interface SensorFilter {
 }
 
 @Component({
-    selector: 'filter',
+    selector: 'sensor-filter',
     moduleId: module.id,
-    templateUrl: 'filter.html'
+    templateUrl: 'sensor-filter.html'
 })
-export class FilterComponent {
+export class SensorFilterComponent {
     public filter: SensorFilter = { fullText: null, category: null };
     private categories: string[];
     

@@ -15,11 +15,11 @@
     
     <hr />
 
-    <filter (filterChange)="refreshSensors($event)" #filterCmp></filter>
+    <sensor-filter (filterChange)="refreshSensors($event)" #filterCmp></sensor-filter>
     
     <hr />
     
     <!--<sensor-list [sensors]="sensors | sensorFilter: filterCmp.filter"></sensor-list>-->
-    <sensor-list [sensors]="sensors"></sensor-list>
+    <sensor-list [sensors]="sensors | filterSensor: { fullText: 'humid', category: 'humidity' }"></sensor-list>
     
 </div>
