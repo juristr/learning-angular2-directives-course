@@ -11,7 +11,7 @@ export interface SensorFilter {
     templateUrl: 'filter.html'
 })
 export class FilterComponent {
-    public filter: SensorFilter = { fullText: '', category: null };
+    public filter: SensorFilter = { fullText: null, category: null };
     private categories: string[];
     
     // change event
