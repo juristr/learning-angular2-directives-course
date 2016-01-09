@@ -26,6 +26,10 @@ export class SensorConfigureComponent implements OnInit {
                 this.sensors = new FilterSensor().transform(data, [filterData]);
             });
     }
+    
+    addToDashboard(sensor: Sensor) {
+        console.log('logging sensor', sensor);
+    }
 
     ngOnInit() { 
         

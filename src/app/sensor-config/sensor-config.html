@@ -19,6 +19,6 @@
     
     <hr />
     
-    <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory"></sensor-list>
+    <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" (addItem)="addToDashboard($event)"></sensor-list>
     
 </div>
