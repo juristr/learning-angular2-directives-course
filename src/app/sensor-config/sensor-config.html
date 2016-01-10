@@ -21,4 +21,8 @@
     
     <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" (addItem)="addToDashboard($event)"></sensor-list>
     
+    <button (click)="modal.open()">Open</button>
+    
+    <config-modal #modal></config-modal>
+    
 </div>

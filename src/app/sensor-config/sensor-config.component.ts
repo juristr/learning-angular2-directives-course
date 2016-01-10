@@ -4,11 +4,12 @@ import { SensorService, Sensor } from '../core/sensor';
 import { SensorFilterComponent } from './sensor-filter.component';
 import { SensorListComponent } from './sensor-list.component';
 import { FilterSensor } from './filter-sensor.pipe';
+import { ConfigModalComponent } from './config-modal.component';
 
 @Component({
     selector: 'configure',
     moduleId: module.id,
-    directives: [ SensorFilterComponent, SensorListComponent ],
+    directives: [ SensorFilterComponent, SensorListComponent, ConfigModalComponent ],
     pipes: [FilterSensor],
     templateUrl: 'sensor-config.html'
 })
@@ -31,7 +32,4 @@ export class SensorConfigureComponent implements OnInit {
         console.log('logging sensor', sensor);
     }
 
-    ngOnInit() { 
-        
-    }
 }
