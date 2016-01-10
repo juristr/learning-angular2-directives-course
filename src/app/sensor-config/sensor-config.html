@@ -13,16 +13,15 @@
         </button>
     </div>
     
-    <hr />
+    <div *ngIf="sensors && sensors.length > 0">
+        <hr />
 
-    <sensor-filter (filterChange)="refreshSensors($event)" #filterCmp></sensor-filter>
+        <sensor-filter (filterChange)="refreshSensors($event)" #filterCmp></sensor-filter>
+        
+        <hr />
+        
+        <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" (addItem)="modal.open($event)"></sensor-list>
+    </div>
     
-    <hr />
-    
-    <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" (addItem)="addToDashboard($event)"></sensor-list>
-    
-    <button (click)="modal.open()">Open</button>
-    
-    <config-modal #modal></config-modal>
-    
+    <config-modal #modal  (confirm)="addToDashboard($event)"></config-modal>
 </div>

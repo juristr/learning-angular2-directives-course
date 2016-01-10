@@ -2,7 +2,7 @@
   <div class="mdl-card__supporting-text">
     <div>
         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-all">
-            <input type="radio" id="option-all" class="mdl-radio__button" name="options" value="" selected (change)="categoryChanged(undefined)">
+            <input type="radio" id="option-all" class="mdl-radio__button" name="options" value="" checked (change)="categoryChanged(undefined)">
             <span class="mdl-radio__label">All</span>
         </label>
         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" *ngFor="#category of categories">

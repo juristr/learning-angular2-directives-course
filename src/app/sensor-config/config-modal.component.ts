@@ -1,4 +1,6 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, Output, EventEmitter } from 'angular2/core';
+
+import { Sensor } from '../core/sensor';
 
 @Component({
     selector: 'config-modal',
@@ -7,10 +9,10 @@ import {Component, OnInit} from 'angular2/core';
         <div class="md-dialog mdl-color--white mdl-shadow--2dp" [hidden]="!isOpen">
             <div class="md-dialog-content">
                 <div class="typo-styles__demo mdl-typography--headline">
-                    Dialog Title
+                    {{ sensorModel.name }}
                 </div>
                 <div class="md-dialog-content-body">
-                    <p>All of the banks have agreed to forgive you your debts.</p>
+                    {{ sensorModel.description }}
                 </div>
             </div>
             <div class="md-dialog-actions">
@@ -91,15 +93,21 @@ import {Component, OnInit} from 'angular2/core';
 
 export class ConfigModalComponent {
     private isOpen: boolean = false;
+    private sensorModel = {};
+    
+    @Output() confirm: EventEmitter<Sensor> = new EventEmitter<Sensor>();
 
     constructor() { }
 
-    open() {
+    open(sensor: Sensor) {
+        this.sensorModel = sensor;
         this.isOpen = true;
     }
 
     ok() {
         console.log('pressed ok');
+        this.confirm.emit(this.sensorModel);
+        this.isOpen = false;
     }
     
     close() {

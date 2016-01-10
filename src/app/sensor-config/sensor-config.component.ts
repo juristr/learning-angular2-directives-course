@@ -14,7 +14,7 @@ import { ConfigModalComponent } from './config-modal.component';
     templateUrl: 'sensor-config.html'
 })
 
-export class SensorConfigureComponent implements OnInit {
+export class SensorConfigureComponent {
     private filter: string;
     private sensors: Sensor[] = [];
 
