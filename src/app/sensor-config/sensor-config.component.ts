@@ -4,7 +4,7 @@ import { SensorService, Sensor } from '../core/sensor';
 import { SensorFilterComponent } from './sensor-filter.component';
 import { SensorListComponent } from './sensor-list.component';
 import { FilterSensor } from './filter-sensor.pipe';
-import { ConfigModalComponent } from './config-modal.component';
+import { ConfigModalComponent } from '../modal/modal.component';
 
 @Component({
     selector: 'configure',

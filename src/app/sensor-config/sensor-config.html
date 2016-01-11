@@ -38,7 +38,7 @@
     </div>
 </div>
 
-<config-modal #modal  (confirm)="addToDashboard(sensorModel)" (cancel)="cancelModal()">
+<modal #modal  (confirm)="addToDashboard(sensorModel)" (cancel)="cancelModal()">
     <div class="mdl-card__supporting-text" *ngIf="sensorModel">
         <form action="#">
             <div class="mdl-textfield mdl-js-textfield">
@@ -51,4 +51,4 @@
             </div>
         </form>
     </div>    
-</config-modal>
+</modal>

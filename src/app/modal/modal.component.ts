@@ -3,7 +3,7 @@ import {Component, Output, EventEmitter } from 'angular2/core';
 import { Sensor } from '../core/sensor';
 
 @Component({
-    selector: 'config-modal',
+    selector: 'modal',
     moduleId: module.id,
     template: `
         <div class="md-dialog mdl-color--white mdl-shadow--2dp" [hidden]="!isOpen">
