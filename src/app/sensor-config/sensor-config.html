@@ -20,7 +20,7 @@
         
         <hr />
         
-        <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" (addItem)="modal.open($event)"></sensor-list>
+        <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" (addItem)="selectSensor($event, modal)"></sensor-list>
     </div>    
 </div>
 
@@ -38,4 +38,17 @@
     </div>
 </div>
 
-<config-modal #modal  (confirm)="addToDashboard($event)"></config-modal>
+<config-modal #modal  (confirm)="addToDashboard(sensorModel)" (cancel)="cancelModal()">
+    <div class="mdl-card__supporting-text" *ngIf="sensorModel">
+        <form action="#">
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="username" [(ngModel)]="sensorModel.name"  />
+                <label class="mdl-textfield__label" for="username">Username</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <textarea class="mdl-textfield__input" [(ngModel)]="sensorModel.description"></textarea>
+                <label class="mdl-textfield__label" for="userpass">Description</label>
+            </div>
+        </form>
+    </div>    
+</config-modal>

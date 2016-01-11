@@ -18,6 +18,7 @@ export class SensorConfigureComponent implements OnInit {
     private filter: string;
     private sensors: Sensor[] = [];
     private configuredSensors: Sensor[];
+    private sensorModel: Sensor;
 
     constructor(public sensorService: SensorService) {    
     }
@@ -32,6 +33,21 @@ export class SensorConfigureComponent implements OnInit {
             .subscribe(data => {
                 this.sensors = new FilterSensor().transform(data, [filterData]);
             });
+    }
+    
+    selectSensor(sensor:Sensor, modal) {
+        // assign a copy of the sensor
+        this.sensorModel = {
+            name: sensor.name,
+            description: sensor.description,
+            type: sensor.type
+        };
+        modal.open();
+    }
+    
+    cancelModal() {
+        // reset the model
+        this.sensorModel = null;
     }
     
     addToDashboard(sensor: Sensor) {

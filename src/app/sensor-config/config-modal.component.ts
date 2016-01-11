@@ -12,18 +12,7 @@ import { Sensor } from '../core/sensor';
                     {{ sensorModel.name }}
                 </div>
                 <div class="md-dialog-content-body">
-                    <div class="mdl-card__supporting-text">
-                        <form action="#">
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="username" [(ngModel)]="sensorModel.name"  />
-                                <label class="mdl-textfield__label" for="username">Username</label>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <textarea class="mdl-textfield__input" [(ngModel)]="sensorModel.description"></textarea>
-                                <label class="mdl-textfield__label" for="userpass">Description</label>
-                            </div>
-                        </form>
-                    </div>
+                    <ng-content></ng-content>
                 </div>
             </div>
             <div class="md-dialog-actions">
@@ -109,29 +98,23 @@ export class ConfigModalComponent {
     private isOpen: boolean = false;
     private sensorModel = {};
     
-    @Output() confirm: EventEmitter<Sensor> = new EventEmitter<Sensor>();
+    @Output() confirm: EventEmitter<any> = new EventEmitter();
+    @Output() cancel: EventEmitter<any> = new EventEmitter();
 
     constructor() { }
 
-    open(sensor: Sensor) {
-        // assign a copy of the sensor
-        this.sensorModel = {
-            name: sensor.name,
-            description: sensor.description,
-            type: sensor.type
-        };
+    open() {
         this.isOpen = true;
     }
 
     ok() {
-        console.log('pressed ok');
-        this.confirm.emit(this.sensorModel);
+        this.confirm.emit(null);
         this.isOpen = false;
     }
     
     close() {
-        console.log('pressed close');
-        this.isOpen = false;        
+        this.isOpen = false;     
+        this.cancel.emit(null);   
     }
     
 }
