@@ -10,6 +10,7 @@ export interface Sensor {
 
 @Injectable()
 export class SensorService {
+    private dashboardSensors: Sensor[] = [];
 
     constructor(private http: Http) {
         
@@ -19,6 +20,14 @@ export class SensorService {
         return this.http
             .get('/src/data/newsensors.json')
             .map(res => res.json());
+    }
+    
+    addToDashboard(sensor: Sensor) {
+        this.dashboardSensors.push(sensor);
+    }
+    
+    getDashboardSensors(): Sensor[] {
+        return this.dashboardSensors;
     }
 
 }
