@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter } from 'angular2/core';
+import {Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
 
 import { Sensor } from '../core/sensor';
 
@@ -8,11 +8,13 @@ import { Sensor } from '../core/sensor';
     templateUrl: 'sensor-list.html'
 })
 
-export class SensorListComponent {
+export class SensorListComponent implements OnInit {
     @Input() sensors: Sensor[];
     @Output() addItem: EventEmitter<Sensor> = new EventEmitter<Sensor>();
     
-    constructor() { }
+    constructor() {
+        
+    }
     
     add(sensor: Sensor) {
         this.addItem.emit(sensor);    

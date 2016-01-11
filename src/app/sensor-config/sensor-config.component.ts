@@ -14,14 +14,20 @@ import { ConfigModalComponent } from './config-modal.component';
     templateUrl: 'sensor-config.html'
 })
 
-export class SensorConfigureComponent {
+export class SensorConfigureComponent implements OnInit {
     private filter: string;
     private sensors: Sensor[] = [];
+    private configuredSensors: Sensor[];
 
     constructor(public sensorService: SensorService) {    
     }
     
-    refreshSensors(filterData) {
+    ngOnInit() {
+        this.refreshSensors();
+        this.configuredSensors = this.sensorService.getDashboardSensors();
+    }
+    
+    refreshSensors(filterData?: any) {
         this.sensorService.discoverSensors()
             .subscribe(data => {
                 this.sensors = new FilterSensor().transform(data, [filterData]);
@@ -29,7 +35,7 @@ export class SensorConfigureComponent {
     }
     
     addToDashboard(sensor: Sensor) {
-        console.log('logging sensor', sensor);
+        this.sensorService.addToDashboard(sensor);
     }
 
 }

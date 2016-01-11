@@ -1,6 +1,6 @@
 <div class="app-page-content mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col">
 
-    <h1 class="mdl-typography--display-3">
+    <h1 class="mdl-typography--display-2">
         List of sensors
     </h1>
     <p class="mdl-typography--title">
@@ -21,7 +21,21 @@
         <hr />
         
         <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" (addItem)="modal.open($event)"></sensor-list>
-    </div>
-    
-    <config-modal #modal  (confirm)="addToDashboard($event)"></config-modal>
+    </div>    
 </div>
+
+<div class="app-page-content mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+
+    <h1 class="mdl-typography--display-2">
+        Configured sensors
+    </h1>    
+    
+     <div *ngIf="configuredSensors && configuredSensors.length > 0">        
+        <sensor-list [sensors]="configuredSensors"></sensor-list>    
+    </div>
+    <div *ngIf="!configuredSensors || configuredSensors.length === 0">
+        <p><i>No sensors configured yet</i></p>
+    </div>
+</div>
+
+<config-modal #modal  (confirm)="addToDashboard($event)"></config-modal>
