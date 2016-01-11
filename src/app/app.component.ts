@@ -1,5 +1,6 @@
 import { Component } from 'angular2/core';
 import { Router, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
+import * as materialLite from 'material';
 
 // services
 import { SensorService } from './core/sensor';
@@ -37,8 +38,15 @@ import { SensorConfigureComponent } from './sensor-config/sensor-config.componen
 export class App {
   title: string;
 
-  constructor() {
+  constructor(router: Router) {
     this.title = 'Angular 2';
+    
+    // register to route changes
+    router.subscribe(() => {
+       // ..and run the MDL script to augment all new controls Angular has
+       // rendered
+       materialLite.componentHandler.upgradeAllRegistered(); 
+    });
   }
 
   ngOnInit() {
