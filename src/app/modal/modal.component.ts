@@ -9,10 +9,10 @@ import { Sensor } from '../core/sensor';
         <div class="md-dialog mdl-color--white mdl-shadow--2dp" [hidden]="!isOpen">
             <div class="md-dialog-content">
                 <div class="typo-styles__demo mdl-typography--headline">
-                    {{ sensorModel.name }}
+                    <ng-content select="[title]"></ng-content>
                 </div>
                 <div class="md-dialog-content-body">
-                    <ng-content></ng-content>
+                    <ng-content select="[content]"></ng-content>
                 </div>
             </div>
             <div class="md-dialog-actions">

@@ -39,8 +39,9 @@
 </div>
 
 <modal #modal  (confirm)="addToDashboard(sensorModel)" (cancel)="cancelModal()">
-    <div class="mdl-card__supporting-text" *ngIf="sensorModel">
-        <form action="#">
+    <span title>Configure Sensor</span> 
+    <div content class="mdl-card__supporting-text">
+        <form action="#" *ngIf="sensorModel">
             <div class="mdl-textfield mdl-js-textfield">
                 <input class="mdl-textfield__input" type="text" id="username" [(ngModel)]="sensorModel.name"  />
                 <label class="mdl-textfield__label" for="username">Username</label>
