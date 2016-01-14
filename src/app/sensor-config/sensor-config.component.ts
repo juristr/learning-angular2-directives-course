@@ -5,11 +5,12 @@ import { SensorFilterComponent } from './sensor-filter.component';
 import { SensorListComponent } from './sensor-list.component';
 import { FilterSensor } from './filter-sensor.pipe';
 import { ConfigModalComponent } from '../modal/modal.component';
+import { OpenWithDirective } from '../modal/open-model.directive';
 
 @Component({
     selector: 'configure',
     moduleId: module.id,
-    directives: [ SensorFilterComponent, SensorListComponent, ConfigModalComponent ],
+    directives: [ SensorFilterComponent, SensorListComponent, ConfigModalComponent, OpenWithDirective ],
     pipes: [FilterSensor],
     templateUrl: 'sensor-config.html'
 })
