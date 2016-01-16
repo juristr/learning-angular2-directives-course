@@ -96,19 +96,21 @@ import { Sensor } from '../core/sensor';
 
 export class ConfigModalComponent {
     private isOpen: boolean = false;
-    private sensorModel = {};
+    // private sensorModel = {};
+    private nextFn: Function;
     
-    @Output() confirm: EventEmitter<any> = new EventEmitter();
+    // @Output() confirm: EventEmitter<any> = new EventEmitter();     // won't need this
     @Output() cancel: EventEmitter<any> = new EventEmitter();
 
     constructor() { }
 
-    open() {
+    open(callback: Function) {
+        this.nextFn = callback;
         this.isOpen = true;
     }
 
-    ok() {
-        this.confirm.emit(null);
+    ok(callback) {
+        this.nextFn();
         this.isOpen = false;
     }
     

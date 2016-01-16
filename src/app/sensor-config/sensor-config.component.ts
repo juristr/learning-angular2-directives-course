@@ -19,7 +19,7 @@ export class SensorConfigureComponent implements OnInit {
     private filter: string;
     private sensors: Sensor[] = [];
     private configuredSensors: Sensor[];
-    private sensorModel: Sensor;
+    private sensorModel = {};
 
     constructor(public sensorService: SensorService) {    
     }

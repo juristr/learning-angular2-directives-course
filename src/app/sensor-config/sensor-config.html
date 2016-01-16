@@ -38,9 +38,9 @@
     </div>
 </div>
 
-<button [open-with]="modal">click me</button>
+<button [open-with]="modal" (confirm)="addToDashboard(sensorModel)">click me</button>
 
-<modal #modal (confirm)="addToDashboard(sensorModel)" (cancel)="cancelModal()">
+<modal #modal (cancel)="cancelModal()">
     <span title>Configure Sensor</span> 
     <div content class="mdl-card__supporting-text">
         <form action="#" *ngIf="sensorModel">
@@ -56,7 +56,7 @@
     </div>    
 </modal>
 
-<modal #modal2 (confirm)="addToDashboard(sensorModel)" (cancel)="cancelModal()">
+<modal #modal2 (cancel)="cancelModal()">
     <span title>Are you sure?</span> 
     <div content class="mdl-card__supporting-text">
         Are you sure that you want to remove this configured sensor?
