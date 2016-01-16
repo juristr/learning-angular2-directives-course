@@ -37,13 +37,13 @@ export class SensorConfigureComponent implements OnInit {
     }
     
     selectSensor(sensor:Sensor, modal) {
-        // assign a copy of the sensor
-        this.sensorModel = {
-            name: sensor.name,
-            description: sensor.description,
-            type: sensor.type
-        };
-        modal.open();
+        // // assign a copy of the sensor
+        // this.sensorModel = {
+        //     name: sensor.name,
+        //     description: sensor.description,
+        //     type: sensor.type
+        // };
+        // modal.open();
     }
     
     cancelModal() {
