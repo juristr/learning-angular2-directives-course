@@ -5,7 +5,7 @@ import { SensorFilterComponent } from './sensor-filter.component';
 import { SensorListComponent } from './sensor-list.component';
 import { FilterSensor } from './filter-sensor.pipe';
 import { ConfigModalComponent } from '../modal/modal.component';
-import { OpenWithDirective } from '../modal/open-model.directive';
+import { OpenWithDirective } from '../modal/open-modal.directive';
 
 @Component({
     selector: 'configure',
