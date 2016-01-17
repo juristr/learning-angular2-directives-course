@@ -6,7 +6,7 @@ import { Sensor } from '../core/sensor';
     selector: 'modal',
     moduleId: module.id,
     template: `
-        <div class="md-dialog mdl-color--white mdl-shadow--2dp" [hidden]="!isOpen">
+        <div #dialog class="md-dialog mdl-color--white mdl-shadow--2dp" [hidden]="!isOpen" (keydown.esc)="cancel()" (keydown.enter)="ok()" tabindex="0" autofocus>
             <div class="md-dialog-content">
                 <div class="typo-styles__demo mdl-typography--headline">
                     <ng-content select="[title]"></ng-content>
@@ -23,6 +23,7 @@ import { Sensor } from '../core/sensor';
                     Cancel
                 </button>
             </div>
+            <div tabindex="0" (focus)="dialog.focus()" ></div>
         </div>
         <div class="md-backdrop" [hidden]="!isOpen"></div>
     `,
@@ -96,13 +97,10 @@ import { Sensor } from '../core/sensor';
 
 export class ConfigModalComponent {
     private isOpen: boolean = false;
-    // private sensorModel = {};
     private nextFn: Function;
     
-    // @Output() confirm: EventEmitter<any> = new EventEmitter();     // won't need this
-    @Output() cancel: EventEmitter<any> = new EventEmitter();
-
-    constructor() { }
+    constructor() {
+    }
 
     open(callback: Function) {
         this.nextFn = callback;
@@ -115,8 +113,7 @@ export class ConfigModalComponent {
     }
     
     close() {
-        this.isOpen = false;     
-        this.cancel.emit(null);   
+        this.isOpen = false;   
     }
     
 }
