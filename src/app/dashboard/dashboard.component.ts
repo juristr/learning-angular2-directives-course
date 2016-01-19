@@ -1,48 +1,17 @@
 import {Component} from 'angular2/core';
 
 import { WidgetComponent } from '../widget/widget.component';
+import { TabsComponent } from '../tabs/tabs.component';
 
 @Component({
     selector: 'dashboard',
-    directives: [WidgetComponent],
+    directives: [WidgetComponent, TabsComponent],
     template: `
     <div class="mdl-grid">
         <widget>
             <span widget-title>Test</span>
             <div widget-body>
-                <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-                    <div class="mdl-tabs__tab-bar">
-                        <a href="#starks-panel" class="mdl-tabs__tab is-active">Starks</a>
-                        <a href="#lannisters-panel" class="mdl-tabs__tab">Lannisters</a>
-                        <a href="#targaryens-panel" class="mdl-tabs__tab">Targaryens</a>
-                    </div>
-
-                    <div class="mdl-tabs__panel is-active" id="starks-panel">
-                        <ul>
-                        <li>Eddard</li>
-                        <li>Catelyn</li>
-                        <li>Robb</li>
-                        <li>Sansa</li>
-                        <li>Brandon</li>
-                        <li>Arya</li>
-                        <li>Rickon</li>
-                        </ul>
-                    </div>
-                    <div class="mdl-tabs__panel" id="lannisters-panel">
-                        <ul>
-                        <li>Tywin</li>
-                        <li>Cersei</li>
-                        <li>Jamie</li>
-                        <li>Tyrion</li>
-                        </ul>
-                    </div>
-                    <div class="mdl-tabs__panel" id="targaryens-panel">
-                        <ul>
-                        <li>Viserys</li>
-                        <li>Daenerys</li>
-                        </ul>
-                    </div>
-                  </div>
+                <tabs></tabs>
             </div>
         </widget>
         <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
