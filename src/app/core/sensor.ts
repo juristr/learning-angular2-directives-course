@@ -5,7 +5,8 @@ import 'rxjs/Rx';
 export interface Sensor {
     name: string,
     description: string,
-    type: string
+    type: string,
+    data: any
 }
 
 @Injectable()
