@@ -3,10 +3,11 @@ import {Component} from 'angular2/core';
 import { WidgetComponent } from '../widget/widget.component';
 import { TabsComponent } from '../tabs/tabs.component';
 import { TabComponent } from '../tabs/tab.component';
+import { TemperatureHistoryComponent } from '../sensors/temperature-history.component';
 
 @Component({
     selector: 'dashboard',
-    directives: [WidgetComponent, TabsComponent, TabComponent ],
+    directives: [WidgetComponent, TabsComponent, TabComponent, TemperatureHistoryComponent ],
     template: `
     <div class="mdl-grid">
         <widget>
@@ -41,6 +42,12 @@ import { TabComponent } from '../tabs/tab.component';
                 </tabs>
             </div>
         </widget>
+        <widget>
+            <span widget-title>Temperature over time</span>
+            <div widget-body>
+                <temperature-history></temperature-history>
+            </div>
+        </widget>        
         <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
             <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
                 <use xlink:href="#piechart" mask="url(#piemask)" />
