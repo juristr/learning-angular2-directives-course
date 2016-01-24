@@ -80,34 +80,28 @@ import { TabComponent } from './tab.component';
     ]
 })
 
-export class TabsComponent implements AfterContentInit {
+export class TabsComponent {
 
     @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
     constructor() { }
 
     ngAfterContentInit() {
-        if (this.tabs.length > 0) {
-            if (!_hasActiveTab(this.tabs)) {
-                this.selectTab(this.tabs.first);
-            }
-        }
-
-        function _hasActiveTab(tabs: QueryList<TabComponent>) {
-            // check if some tab has set active via inputs
-            let activeTabs = tabs.filter((tab) => tab.isActive);
-            return Boolean(activeTabs.length);
+        let activeTabs = this.tabs.filter((tab) => tab.isActive);
+        if(activeTabs.length === 0){
+            this.selectTab(this.tabs.first);
         }
     }
 
     selectTab(tab: TabComponent) {
+        // deactivate all prior tabs
+        this.tabs.toArray().forEach(tab => {
+           tab.isActive = false; 
+        });
+        
 
-        _deactivateAllTabs(this.tabs.toArray());
+        // activate the current one
         tab.isActive = true;
-
-        function _deactivateAllTabs(tabs: TabComponent[]) {
-            tabs.forEach((tab) => tab.isActive = false);
-        }
     }
 
 }
