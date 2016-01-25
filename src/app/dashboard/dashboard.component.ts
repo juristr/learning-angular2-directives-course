@@ -11,33 +11,17 @@ import { TemperatureHistoryComponent } from '../sensors/temperature-history.comp
     template: `
     <div class="mdl-grid">
         <widget>
-            <span widget-title>Tabbed widget</span>
+            <span widget-title>Living Room</span>
             <div widget-body>
                 <tabs>
-                    <tab title="Starks">
-                        <ul>
-                            <li>Eddard</li>
-                            <li>Catelyn</li>
-                            <li>Robb</li>
-                            <li>Sansa</li>
-                            <li>Brandon</li>
-                            <li>Arya</li>
-                            <li>Rickon</li>
-                        </ul>
+                    <tab title="Temperature">
+                        <div style="font-size:30px;text-align:center;width:100%;height:100%">39</div>
                     </tab>
-                    <tab title="Lannisters">
-                        <ul>
-                            <li>Tywin</li>
-                            <li>Cersei</li>
-                            <li>Jamie</li>
-                            <li>Tyrion</li>
-                        </ul>
+                    <tab title="Humidity">
+                       <div style="font-size:30px;text-align:center;width:100%;height:100%">30%</div>
                     </tab>
                     <tab title="Targaryens">
-                        <ul>
-                            <li>Viserys</li>
-                            <li>Daenerys</li>
-                        </ul>
+                        <temperature-history></temperature-history>
                     </tab>
                 </tabs>
             </div>

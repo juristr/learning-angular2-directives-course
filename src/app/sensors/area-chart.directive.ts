@@ -9,86 +9,93 @@ export class AreaChartDirective implements OnChanges {
     svg: any;
     width: number;
     height: number;
+    margin: { top: number, right: number, left: number, bottom: number };
 
     constructor(public elementRef: ElementRef) {
         var el = this.elementRef.nativeElement;
+        
+        // http://stackoverflow.com/questions/31562224/how-to-fill-a-single-value-in-the-donut-chart
+        
+        var percent = 20;
 
-        var margin = {
-            top: 20, right: 20, bottom: 30, left: 50
-        };
-        this.width = 400 - margin.left - margin.right;
-        this.height = 200 - margin.top - margin.bottom;
+        var data = [percent, 100-percent] //as you see, i have added 55 (100-45).
 
-        this.svg = d3.select(el).append("svg")
-            .attr("width", this.width + margin.left + margin.right)
-            .attr("height", this.height + margin.top + margin.bottom)
+        var width = 300,
+            height = 300,
+            radius = Math.min(width, height) / 2;
+
+        var color = d3.scale.ordinal()
+            .domain(data)
+            .range(["#ffff00", "#1ebfc5"]);
+
+        var arc = d3.svg.arc()
+            .outerRadius(radius - 90)
+            .innerRadius(radius - 80);
+
+        var pie = d3.layout.pie()
+            .sort(null)
+            .value(function(d) { return d });
+
+        var svg = d3.select(el).append("svg")
+            .attr("width", width)
+            .attr("height", height)
             .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+
+        var g = svg.selectAll(".arc")
+            .data(pie(data))
+            .enter().append("g")
+            .attr("class", "arc");
+
+        g.append("path")
+            .attr("d", arc)
+            .style("fill", function(d, i) { return color(d.data); });
     }
-    
+
     ngOnChanges(changes) {
         console.log('re-rendering due to changes', changes);
-        
-        if(changes.data){
+
+        if (changes.data) {
             this.data = changes.data.currentValue;
             this.render();
         }
     }
 
     render() {
-        var x = d3.time.scale()
-            .range([0, this.width]);
+        // var data = [45, 55] //as you see, i have added 55 (100-45).
 
-        var y = d3.scale.linear()
-            .range([this.height, 0]);
+        // var width = 400,
+        //     height = 400,
+        //     radius = Math.min(width, height) / 2;
 
-        var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient("bottom");
+        // var color = d3.scale.ordinal()
+        //     .domain(data)
+        //     .range(["#ffff00", "#1ebfc5"]);
 
-        var yAxis = d3.svg.axis()
-            .scale(y)
-            .orient("left");
+        // var arc = d3.svg.arc()
+        //     .outerRadius(radius - 90)
+        //     .innerRadius(radius - 80);
 
-        var area = d3.svg.area()
-            .x(function(d) { return x(d.date); })
-            .y0(this.height)
-            .y1(function(d) { return y(d.close); });
+        // var pie = d3.layout.pie()
+        //     .sort(null)
+        //     .value(function(d) { return d });
+
+        // var svg = d3.select("body").append("svg")
+        //     .attr("width", width)
+        //     .attr("height", height)
+        //     .append("g")
+        //     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 
+        // var g = svg.selectAll(".arc")
+        //     .data(pie(data))
+        //     .enter().append("g")
+        //     .attr("class", "arc");
 
-        var parseDate = d3.time.format("%H:%M:%S").parse;
-
-        this.data.forEach(function(d) {
-            if(!(d.date instanceof Date)){
-                d.date = parseDate(d.date);    
-            }
-            
-            d.close = +d.close;
-        });
-
-        x.domain(d3.extent(this.data, function(d) { return d.date; }));
-        y.domain([0, d3.max(this.data, function(d) { return d.close; })]);
-
-        this.svg.append("path")
-            .datum(this.data)
-            .attr("class", "area")
-            .attr("d", area);
-
-        this.svg.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + this.height + ")")
-            .call(xAxis);
-
-        this.svg.append("g")
-            .attr("class", "y axis")
-            .call(yAxis)
-            .append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 6)
-            .attr("dy", ".71em")
-            .style("text-anchor", "end")
-            .text("temperature");
+        // g.append("path")
+        //     .attr("d", arc)
+        //     .style("fill", function(d, i) { return color(d.data); });
     }
 
 
