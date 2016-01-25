@@ -10,7 +10,7 @@ import { TabComponent } from '../tabs/tab.component';
     template: `
     <div class="mdl-grid">
         <widget>
-            <span widget-title>Test</span>
+            <span widget-title>Tabbed widget</span>
             <div widget-body>
                 <tabs>
                     <tab title="Starks">
