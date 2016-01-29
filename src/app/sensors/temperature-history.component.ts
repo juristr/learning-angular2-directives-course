@@ -1,16 +1,15 @@
 import {Component, OnInit, ViewEncapsulation} from 'angular2/core';
-import { AreaChartDirective } from './area-chart.directive';
+import { DonutChartDirective } from './donut-chart.directive';
 
 import * as moment from 'moment';
 
 @Component({
     selector: 'temperature-history',
-    directives: [AreaChartDirective],
+    directives: [DonutChartDirective],
     template: `
-        <area-chart
-            [data]="graphData" [simpleString]="stringValue"
-        >
-        </area-chart>
+        <donut-chart [data]="graphData">
+        </donut-chart>
+        
         <button (click)="addData()">Add dataset</button>
     `,
     styles: [
@@ -55,12 +54,6 @@ export class TemperatureHistoryComponent implements OnInit {
 
     addData() {
         this.graphData = (Math.random() * 30) + 1;
-        // var newArray = new Array(...this.graphData);
-        // newArray.push({
-        //    date: moment().format('HH:mm:ss'),
-        //    close: (Math.random() * 30) +  1
-        // });
-        // this.graphData = newArray;
     }
 
     ngOnInit() { }

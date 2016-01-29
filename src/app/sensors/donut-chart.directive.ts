@@ -2,7 +2,7 @@ import { Directive, OnInit, Input, Inject, ChangeDetectionStrategy, ElementRef, 
 import * as d3 from 'd3';
 
 @Directive({
-    selector: 'area-chart',
+    selector: 'donut-chart',
     // template: `
     // <svg width="300" height="300">
     //     <g transform="translate(150,150)">
@@ -21,7 +21,7 @@ import * as d3 from 'd3';
     // </svg>
     // `
 })
-export class AreaChartDirective implements OnInit, OnChanges {
+export class DonutChartDirective implements OnInit, OnChanges {
     @Input() data: number;
     foreground: any;
     progress: any;
@@ -33,16 +33,16 @@ export class AreaChartDirective implements OnInit, OnChanges {
     constructor(public elementRef: ElementRef) {
         var el = this.elementRef.nativeElement;
 
-        var width = 960,
-            height = 500;
+        var width = 300,
+            height = 300;
         this.twoPi = 2 * Math.PI;
         this.progress = 0;
         this.formatPercent = d3.format(".0%");
 
         this.arc = d3.svg.arc()
             .startAngle(0)
-            .innerRadius(180)
-            .outerRadius(240);
+            .innerRadius(60)
+            .outerRadius(80);
 
         var svg = d3.select(el).append("svg")
             .attr("width", width)
