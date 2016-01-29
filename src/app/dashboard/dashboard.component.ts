@@ -1,35 +1,18 @@
 import {Component} from 'angular2/core';
 
 import { WidgetComponent } from '../widget/widget.component';
-import { TabsComponent } from '../tabs/tabs.component';
-import { TabComponent } from '../tabs/tab.component';
-import { TemperatureHistoryComponent } from '../sensors/temperature-history.component';
+
+import { HumiditySensorComponent } from '../sensors/humidity.component';
 
 @Component({
     selector: 'dashboard',
-    directives: [WidgetComponent, TabsComponent, TabComponent, TemperatureHistoryComponent ],
+    directives: [WidgetComponent, HumiditySensorComponent ],
     template: `
     <div class="mdl-grid">
         <widget>
             <span widget-title>Living Room</span>
             <div widget-body>
-                <tabs>
-                    <tab title="Temperature">
-                        <div style="font-size:30px;text-align:center;width:100%;height:100%">39</div>
-                    </tab>
-                    <tab title="Humidity">
-                       <div style="font-size:30px;text-align:center;width:100%;height:100%">30%</div>
-                    </tab>
-                    <tab title="Targaryens">
-                        <temperature-history></temperature-history>
-                    </tab>
-                </tabs>
-            </div>
-        </widget>
-        <widget>
-            <span widget-title>Temperature over time</span>
-            <div widget-body>
-                <temperature-history></temperature-history>
+                <humidity-sensor></humidity-sensor>
             </div>
         </widget>        
         <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">

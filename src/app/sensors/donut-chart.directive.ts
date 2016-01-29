@@ -1,6 +1,8 @@
 import { Directive, OnInit, Input, Inject, ChangeDetectionStrategy, ElementRef, OnChanges, SimpleChange } from 'angular2/core';
 import * as d3 from 'd3';
 
+// http://bl.ocks.org/mbostock/3750941
+
 @Directive({
     selector: 'donut-chart',
     // template: `
