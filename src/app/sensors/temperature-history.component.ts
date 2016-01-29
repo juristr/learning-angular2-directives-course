@@ -25,27 +25,43 @@ import * as moment from 'moment';
         .area {
             fill: steelblue;
         }
+        
+        
+        .progress-meter .background {
+           fill: #ccc;
+        }
+
+        .progress-meter .foreground {
+            fill: #000;
+        }
+
+        .progress-meter text {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
         `
     ],
     encapsulation: ViewEncapsulation.None
 })
 
 export class TemperatureHistoryComponent implements OnInit {
-    graphData: any[] = [];
+    graphData: number;
     stringValue: string = 'Hi';
 
     constructor() {
-        this.graphData = [
-        ]
+        this.graphData = 10;
     }
 
     addData() {
-        var newArray = new Array(...this.graphData);
-        newArray.push({
-           date: moment().format('HH:mm:ss'),
-           close: (Math.random() * 30) +  1
-        });
-        this.graphData = newArray;
+        this.graphData = (Math.random() * 30) + 1;
+        // var newArray = new Array(...this.graphData);
+        // newArray.push({
+        //    date: moment().format('HH:mm:ss'),
+        //    close: (Math.random() * 30) +  1
+        // });
+        // this.graphData = newArray;
     }
 
     ngOnInit() { }
