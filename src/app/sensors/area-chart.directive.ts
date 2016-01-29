@@ -23,34 +23,46 @@ import * as d3 from 'd3';
 })
 export class AreaChartDirective implements OnInit, OnChanges {
     @Input() data: number;
-    svg: any;
-    width: number;
-    height: number;
-    margin: { top: number, right: number, left: number, bottom: number };
-    radius: number;
+    foreground: any;
+    progress: any;
+    text: any;
+    twoPi: any;
+    formatPercent: any;
     arc: any;
-    textEl: any;
 
     constructor(public elementRef: ElementRef) {
-
         var el = this.elementRef.nativeElement;
 
-        this.width =300;
-        this.height = 300;
-        this.radius = Math.min(this.width, this.height) / 2;
+        var width = 960,
+            height = 500;
+        this.twoPi = 2 * Math.PI;
+        this.progress = 0;
+        this.formatPercent = d3.format(".0%");
 
         this.arc = d3.svg.arc()
-            .outerRadius(this.radius - 90)
-            .innerRadius(this.radius - 80);
+            .startAngle(0)
+            .innerRadius(180)
+            .outerRadius(240);
 
-        this.svg = d3.select(el).append("svg")
-            .attr("width", this.width)
-            .attr("height", this.height)
+        var svg = d3.select(el).append("svg")
+            .attr("width", width)
+            .attr("height", height)
             .append("g")
-            .attr("transform", "translate(" + this.width / 2 + "," + this.height / 2 + ")");
-            
-        this.textEl = this.svg.append("text")
-                        .attr("dx", function(d) { return -20 });
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+        var meter = svg.append("g")
+            .attr("class", "progress-meter");
+
+        meter.append("path")
+            .attr("class", "background")
+            .attr("d", this.arc.endAngle(this.twoPi));
+
+        this.foreground = meter.append("path")
+            .attr("class", "foreground");
+
+        this.text = meter.append("text")
+            .attr("text-anchor", "middle")
+            .attr("dy", ".35em");
     }
 
     ngOnInit() {
@@ -58,49 +70,21 @@ export class AreaChartDirective implements OnInit, OnChanges {
     }
 
     ngOnChanges(changes) {
-        console.log('re-rendering due to changes', changes.data.currentValue);
-
         this.render(changes.data.currentValue);
-
-        // if (changes.data) {
-        //     this.data = changes.data.currentValue;
-        //     this.render();
-        // }
     }
 
-    render(number) {
-        var percent = number;
-        var data = [percent, 100 - percent] //as you see, i have added 55 (100-45).
-        
-        
-        // http://stackoverflow.com/questions/31562224/how-to-fill-a-single-value-in-the-donut-chart
+    render(percentage) {
+        var i = d3.interpolate(this.progress, percentage / 100);
+        var vm = this;
 
-        var color = d3.scale.ordinal()
-            .domain(data)
-            .range(["#ffff00", "#1ebfc5"]);
-
-
-        var pie = d3.layout.pie()
-            .sort(null)
-            .value(function(d) { return d });
-
-        // this.svg.append("text")
-        //     .attr("dx", function(d) { return -20 })
-        this.textEl.text(function(d) {
-            console.log('text element: ', d); 
-            return `${percent} %`; 
-        });
-
-
-        var g = this.svg.selectAll(".arc")
-            .data(pie(data))
-            .enter()
-            .append("g")
-            .attr("class", "arc");
-
-        g.append("path")
-            .attr("d", this.arc)
-            .style("fill", function(d, i) { return color(d.data); });
+        d3.transition()
+            .tween("progress", function() {
+                return function(t) {
+                    vm.progress = i(t);
+                    vm.foreground.attr("d", vm.arc.endAngle(vm.twoPi * vm.progress));
+                    vm.text.text(vm.formatPercent(vm.progress));
+                };
+            });
 
     }
 

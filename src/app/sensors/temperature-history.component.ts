@@ -26,13 +26,12 @@ import * as moment from 'moment';
             fill: steelblue;
         }
         
-        
         .progress-meter .background {
            fill: #ccc;
         }
 
         .progress-meter .foreground {
-            fill: #000;
+            fill: steelblue;
         }
 
         .progress-meter text {
