@@ -7,7 +7,14 @@ import {Component, Input} from 'angular2/core';
     <div class="tabs-panel" [hidden]="!isActive">
         <ng-content></ng-content>
     </div>
-    `
+    `,
+    styles: [
+        `
+        .tabs-panel {
+            padding: 10px;
+        }
+        `
+    ]
 })
 
 export class TabComponent {

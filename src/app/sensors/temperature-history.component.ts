@@ -7,13 +7,19 @@ import * as moment from 'moment';
     selector: 'temperature-history',
     directives: [DonutChartDirective],
     template: `
-        <donut-chart [data]="graphData">
+        <donut-chart [data]="graphData" class="donut-style">
         </donut-chart>
         
         <button (click)="addData()">Add dataset</button>
     `,
     styles: [
         `
+        .donut-style {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+        }
+        
         .axis path,
         .axis line {
             fill: none;
@@ -49,7 +55,7 @@ export class TemperatureHistoryComponent implements OnInit {
     stringValue: string = 'Hi';
 
     constructor() {
-        this.graphData = 10;
+        this.graphData = 20;
     }
 
     addData() {

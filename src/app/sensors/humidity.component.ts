@@ -10,16 +10,27 @@ import { TemperatureHistoryComponent } from './temperature-history.component';
     template: `
     <tabs>
         <tab title="Temperature">
-            <div style="font-size:30px;text-align:center;width:100%;height:100%">39</div>
+            <div class="sensor-display--text">39°C</div>
         </tab>
         <tab title="Humidity">
-            <div style="font-size:30px;text-align:center;width:100%;height:100%">30%</div>
-        </tab>
-        <tab title="Targaryens">
             <temperature-history></temperature-history>
         </tab>
     </tabs>
-    `
+    `,
+    styles: [
+        `
+        .sensor-display--text {
+            font-size: 90px;
+            margin: 40px auto;
+            width: 200px;
+            text-align: center;
+            vertical-align: middle;
+            height: 110px;
+            overflow: hidden;
+            line-height: 1;
+        }
+        `   
+    ]
 })
 
 export class HumiditySensorComponent implements OnInit {

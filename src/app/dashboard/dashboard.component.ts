@@ -10,8 +10,8 @@ import { HumiditySensorComponent } from '../sensors/humidity.component';
     template: `
     <div class="mdl-grid">
         <widget>
-            <span widget-title>Living Room</span>
-            <div widget-body>
+            <div widget-title>Living Room</div>
+            <div class="mdl-cell mdl-cell--12-col" widget-body>
                 <humidity-sensor></humidity-sensor>
             </div>
         </widget>        

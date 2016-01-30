@@ -35,8 +35,8 @@ export class DonutChartDirective implements OnInit, OnChanges {
     constructor(public elementRef: ElementRef) {
         var el = this.elementRef.nativeElement;
 
-        var width = 300,
-            height = 300;
+        var width = 200,
+            height = 200;
         this.twoPi = 2 * Math.PI;
         this.progress = 0;
         this.formatPercent = d3.format(".0%");
@@ -68,7 +68,7 @@ export class DonutChartDirective implements OnInit, OnChanges {
     }
 
     ngOnInit() {
-        this.render(0);
+        this.render(this.data);
     }
 
     ngOnChanges(changes) {
