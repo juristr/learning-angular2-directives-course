@@ -32,6 +32,8 @@ export class WidgetComponent implements OnInit {
     private sensor: Sensor;
 
     constructor() { 
+        console.log('widget: constructor');
+        
         this.sensor = {
             name: "S1-00211",
             description: "Humidity sensor",

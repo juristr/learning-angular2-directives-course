@@ -3,6 +3,7 @@ import {Component} from 'angular2/core';
 import { WidgetComponent } from '../widget/widget.component';
 
 import { HumiditySensorComponent } from '../sensors/humidity.component';
+import { SensorService, Sensor } from '../core/sensor';
 
 @Component({
     selector: 'dashboard',
@@ -147,4 +148,11 @@ import { HumiditySensorComponent } from '../sensors/humidity.component';
     </svg>
     `
 })
-export class DashboardCmp {}
+export class DashboardCmp {
+    dashboardSensors: Sensor[] = [];
+    
+    constructor(public sensorService: SensorService) {
+        this.dashboardSensors = sensorService.getDashboardSensors();
+    }
+    
+}
