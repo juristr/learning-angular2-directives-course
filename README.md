@@ -1,7 +1,5 @@
 # Learning Angular 2 directives
 
-Getting started with some TypeScript and ES6 features.
-
 ## Install
 
 Install the latest dependencies using 
@@ -12,16 +10,12 @@ $ npm i
 
 ## Run
 
-Execute the TypeScript compiler
-
 ```
-$ npm run tsc
+$ npm run
 ```
 
-and in another terminal window
+## Execute tests
 
 ```
-$ npm start
+$ npm test
 ```
-
-...to start the app in the browser 
