@@ -1,10 +1,9 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component} from 'angular2/core';
 
 import { Sensor } from '../core/sensor';
 
 @Component({
     selector: 'widget',
-    // moduleId: module.id,
     templateUrl: './widget/widget.html',
     styles: [
         `
@@ -28,7 +27,7 @@ import { Sensor } from '../core/sensor';
     ]
 })
 
-export class WidgetComponent implements OnInit {
+export class WidgetComponent {
     private sensor: Sensor;
 
     constructor() { 
@@ -46,6 +45,4 @@ export class WidgetComponent implements OnInit {
             }
         };
     }
-
-    ngOnInit() { }
 }

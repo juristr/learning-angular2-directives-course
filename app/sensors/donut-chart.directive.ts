@@ -1,29 +1,12 @@
-import { Directive, OnInit, Input, Inject, ChangeDetectionStrategy, ElementRef, OnChanges, OnDestroy, SimpleChange } from 'angular2/core';
+import { Directive, OnInit, Input, Inject, ChangeDetectionStrategy, ElementRef, OnChanges, SimpleChange } from 'angular2/core';
 import * as d3 from 'd3/d3';
 
 // http://bl.ocks.org/mbostock/3750941
 
 @Directive({
-    selector: 'donut-chart',
-    // template: `
-    // <svg width="300" height="300">
-    //     <g transform="translate(150,150)">
-    //         <text dx="-20">undefined%</text>
-    //         <g class="arc">
-    //             <path d=""
-    //             style="fill: rgb(255, 255, 0);">
-    //             </path>
-    //         </g>
-    //         <g class="arc">
-    //             <path d=""
-    //             style="fill: rgb(30, 191, 197);">
-    //             </path>
-    //         </g>
-    //     </g>
-    // </svg>
-    // `
+    selector: 'donut-chart'
 })
-export class DonutChartDirective implements OnInit, OnChanges, OnDestroy {
+export class DonutChartDirective implements OnInit, OnChanges {
     @Input() data: number;
     foreground: any;
     progress: any;
@@ -34,7 +17,7 @@ export class DonutChartDirective implements OnInit, OnChanges, OnDestroy {
 
     constructor(public elementRef: ElementRef) {
         var el = this.elementRef.nativeElement;
-        
+
         console.log('donut-chart: constructor');
 
         var width = 200,
@@ -77,10 +60,6 @@ export class DonutChartDirective implements OnInit, OnChanges, OnDestroy {
     ngOnChanges(changes) {
         console.log('donut-chart: OnChanges');
         this.render(changes.data.currentValue);
-    }
-    
-    ngOnDestroy() {
-        // this.elementRef.nativeElement.parentNode.removeChild(this.elementRef.nativeElement);
     }
 
     render(percentage) {

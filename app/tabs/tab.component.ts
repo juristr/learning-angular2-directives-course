@@ -16,10 +16,8 @@ import {Component, Input} from 'angular2/core';
         `
     ]
 })
-
 export class TabComponent {
     @Input() title: string;
     isActive: boolean = false;
 
-    constructor() { }
 }

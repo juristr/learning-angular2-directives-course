@@ -31,11 +31,11 @@ import { Sensor } from '../core/sensor';
         `
         .md-dialog {
             position: fixed;
-            top: 150px;            
+            top: 150px;
             margin: 0 auto;
             z-index: 51;
         }
-        
+
         .md-dialog-content {
             min-width: 450px;
             min-height: 100px;
@@ -49,16 +49,16 @@ import { Sensor } from '../core/sensor';
             overflow: auto;
             -webkit-overflow-scrolling: touch;
         }
-        
+
         .md-dialog-content > mdl-typography--headline {
             font-weight: 600;
         }
-        
+
         .md-dialog-content-body {
             padding: 15px 0 5px 0;
         }
-        
-        
+
+
         .md-dialog-actions {
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -79,7 +79,7 @@ import { Sensor } from '../core/sensor';
             min-height: 52px;
             overflow: hidden;
         }
-        
+
         .md-backdrop {
             background-color: rgba(33,33,33,1.0);
             opacity: .48;
@@ -98,7 +98,7 @@ import { Sensor } from '../core/sensor';
 export class ConfigModalComponent {
     private isOpen: boolean = false;
     private nextFn: Function;
-    
+
     constructor() {
     }
 
@@ -108,12 +108,14 @@ export class ConfigModalComponent {
     }
 
     ok(callback) {
-        this.nextFn();
+        // return setTimeout(() => {
+            this.nextFn();
+            this.isOpen = false;
+        // });
+    }
+
+    close() {
         this.isOpen = false;
     }
-    
-    close() {
-        this.isOpen = false;   
-    }
-    
+
 }

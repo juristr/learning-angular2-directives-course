@@ -80,15 +80,13 @@ import { TabComponent } from './tab.component';
     ]
 })
 
-export class TabsComponent {
+export class TabsComponent implements AfterContentInit {
 
     @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
-    constructor() { }
-
     ngAfterContentInit() {
         let activeTabs = this.tabs.filter((tab) => tab.isActive);
-        if(activeTabs.length === 0){
+        if (activeTabs.length === 0) {
             this.selectTab(this.tabs.first);
         }
     }
@@ -96,9 +94,8 @@ export class TabsComponent {
     selectTab(tab: TabComponent) {
         // deactivate all prior tabs
         this.tabs.toArray().forEach(tab => {
-           tab.isActive = false; 
+           tab.isActive = false;
         });
-        
 
         // activate the current one
         tab.isActive = true;

@@ -58,7 +58,7 @@ gulp.task('build.test.watch', done =>
 // Test.
 gulp.task('test', done =>
   runSequence('clean.test',
-              'tslint',
+            //   'tslint',
               'build.test',
               'karma.start',
               done));

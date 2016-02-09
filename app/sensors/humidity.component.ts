@@ -27,7 +27,7 @@ import { DonutChartDirective } from './donut-chart.directive';
             display: block;
             margin: 0 auto;
         }
-        
+
         .sensor-display--text {
             font-size: 90px;
             margin: 40px auto;
@@ -38,7 +38,7 @@ import { DonutChartDirective } from './donut-chart.directive';
             overflow: hidden;
             line-height: 1;
         }
-        
+
         .progress-meter .background {
            fill: #ccc;
         }
@@ -52,7 +52,7 @@ import { DonutChartDirective } from './donut-chart.directive';
             font-size: 24px;
             font-weight: bold;
         }
-        `   
+        `
     ]
 })
 
