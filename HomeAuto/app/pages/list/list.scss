@@ -1,0 +1,19 @@
+.donut-style {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.progress-meter .background {
+    fill: #ccc;
+}
+
+.progress-meter .foreground {
+    fill: steelblue;
+}
+
+.progress-meter text {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
