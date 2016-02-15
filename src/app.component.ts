@@ -1,6 +1,6 @@
 import { Component } from 'angular2/core';
 import { Router, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
-import * as materialLite from 'material-design-lite/material';
+// import * as materialLite from 'material-design-lite/material';
 
 // services
 import { SensorService } from './core/sensor';
@@ -14,7 +14,7 @@ import { SensorConfigureComponent } from './sensor-config/sensor-config.componen
 
 @Component({
   selector: 'app',
-  directives: [ ROUTER_DIRECTIVES, HeaderCmp, SidebarCmp, DashboardCmp, SensorConfigureComponent ],
+  directives: [ ROUTER_DIRECTIVES, HeaderCmp, SidebarCmp, DashboardCmp ],
   providers: [ SensorService ],
   template: `
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -32,7 +32,7 @@ import { SensorConfigureComponent } from './sensor-config/sensor-config.componen
 })
 @RouteConfig([
   { path: '/', component: DashboardCmp, as: 'Dashboard' },
-  { path: '/configure', component: SensorConfigureComponent, as: 'Configure' },
+//   { path: '/configure', component: SensorConfigureComponent, as: 'Configure' },
   { path: '/**', redirectTo: ['Dashboard'] }
 ])
 export class App {
@@ -40,12 +40,12 @@ export class App {
 
   constructor(router: Router) {
     this.title = 'Angular 2';
-    
+
     // register to route changes
     router.subscribe(() => {
        // ..and run the MDL script to augment all new controls Angular has
        // rendered
-       materialLite.componentHandler.upgradeAllRegistered(); 
+    //    materialLite.componentHandler.upgradeAllRegistered();
     });
   }
 

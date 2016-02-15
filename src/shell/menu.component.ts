@@ -6,7 +6,6 @@ import { ROUTER_DIRECTIVES } from 'angular2/router';
     directives: [...ROUTER_DIRECTIVES],
     template: `
         <a class="mdl-navigation__link" href="" [routerLink]="['Dashboard']"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation"  >home</i>Home</a>
-        <a class="mdl-navigation__link" href="" [routerLink]="['Configure']"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Configure</a>
         <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
         <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Spam</a>
         <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forums</a>
