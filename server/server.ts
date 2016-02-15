@@ -4,7 +4,7 @@ import * as express from 'express';
 // Angular 2
 import {ng2engine, REQUEST_URL, NODE_LOCATION_PROVIDERS} from 'angular2-universal-preview';
 import {provide, enableProdMode} from 'angular2/core';
-// import {APP_BASE_HREF, ROUTER_PROVIDERS} from 'angular2/router';
+import {APP_BASE_HREF, ROUTER_PROVIDERS} from 'angular2/router';
 // import {App} from '../app/app.component';
 
 let app = express();

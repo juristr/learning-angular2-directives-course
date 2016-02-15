@@ -1,8 +1,8 @@
 exports.config = {
-    baseUrl: 'http://localhost:5555/dist/dev',
+    baseUrl: 'http://localhost:5555',
 
     specs: [
-        'dist/dev/**/*.e2e.js'
+        'dist/test/e2e/**/*.e2e.js'
     ],
     exclude: [],
 
