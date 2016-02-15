@@ -4,22 +4,33 @@ import { Sensor } from '../core/sensor';
 
 @Component({
     selector: 'widget',
-    templateUrl: './widget/widget.html',
+    template: `
+<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">
+            <ng-content select="[widget-title]"></ng-content>
+        </h2>
+    </div>
+    <div class="mdl-card mdl-grid mdl-cell--12-col widget-body-container">
+        <ng-content select="[widget-body]"></ng-content>
+    </div>
+</div>
+    `,
     styles: [
         `
         .mdl-card {
             width: 380px;
         }
-        
+
         h2.mdl-card__title-text {
             width: 100%;
             text-align:center;
         }
-        
+
         h2.mdl-card__title-text > div {
             width: 100%;
         }
-        
+
         .widget-body-container {
             padding: 0;
         }
@@ -30,9 +41,9 @@ import { Sensor } from '../core/sensor';
 export class WidgetComponent {
     private sensor: Sensor;
 
-    constructor() { 
+    constructor() {
         console.log('widget: constructor');
-        
+
         this.sensor = {
             name: 'S1-00211',
             description: 'Humidity sensor',

@@ -1,5 +1,5 @@
-import {bootstrap} from 'angular2/platform/browser';
-// import {bootstrap} from 'angular2-universal-preview';
+// import {bootstrap} from 'angular2/platform/browser';
+import {bootstrap} from 'angular2-universal-preview';
 // import * as materialLite from 'material-design-lite/material';
 import { provide } from 'angular2/core';
 import { HTTP_PROVIDERS } from 'angular2/http';

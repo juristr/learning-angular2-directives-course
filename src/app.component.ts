@@ -14,7 +14,7 @@ import { SensorConfigureComponent } from './sensor-config/sensor-config.componen
 
 @Component({
   selector: 'app',
-  directives: [ ROUTER_DIRECTIVES, HeaderCmp, SidebarCmp, DashboardCmp ],
+  directives: [ ROUTER_DIRECTIVES, HeaderCmp, SidebarCmp, DashboardCmp, SensorConfigureComponent ],
   providers: [ SensorService ],
   template: `
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -31,9 +31,9 @@ import { SensorConfigureComponent } from './sensor-config/sensor-config.componen
   `
 })
 @RouteConfig([
-  { path: '/', component: DashboardCmp, as: 'Dashboard' },
-//   { path: '/configure', component: SensorConfigureComponent, as: 'Configure' },
-  { path: '/**', redirectTo: ['Dashboard'] }
+  { path: '/', component: DashboardCmp, name: 'Dashboard' },
+  { path: '/configure', component: SensorConfigureComponent, name: 'Configure' },
+  { path: '/**', redirectTo: ['Configure'] }
 ])
 export class App {
   title: string;
