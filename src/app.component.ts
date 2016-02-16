@@ -1,6 +1,6 @@
 import { Component } from 'angular2/core';
 import { Router, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
-// import * as materialLite from 'material-design-lite/material';
+import * as materialLite from 'material-design-lite/material';
 
 // services
 import { SensorService } from './core/sensor';
@@ -33,7 +33,7 @@ import { SensorConfigureComponent } from './sensor-config/sensor-config.componen
 @RouteConfig([
   { path: '/', component: DashboardCmp, name: 'Dashboard' },
   { path: '/configure', component: SensorConfigureComponent, name: 'Configure' },
-  { path: '/**', redirectTo: ['Configure'] }
+  { path: '/**', redirectTo: ['Dashboard'] }
 ])
 export class App {
   title: string;
@@ -45,7 +45,7 @@ export class App {
     router.subscribe(() => {
        // ..and run the MDL script to augment all new controls Angular has
        // rendered
-    //    materialLite.componentHandler.upgradeAllRegistered();
+       materialLite.componentHandler.upgradeAllRegistered();
     });
   }
 
