@@ -1,6 +1,6 @@
 // import {bootstrap} from 'angular2/platform/browser';
 import {bootstrap} from 'angular2-universal-preview';
-// import * as materialLite from 'material-design-lite/material';
+import * as materialLite from 'material-design-lite/material';
 import { provide } from 'angular2/core';
 import { HTTP_PROVIDERS } from 'angular2/http';
 import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
@@ -18,7 +18,8 @@ bootstrap(App, [
         ...ELEMENT_PROBE_PROVIDERS
     ])
     .then(function(){
-        // materialLite.componentHandler.upgradeAllRegistered();
+        console.log('running materialLite handlers');
+        materialLite.componentHandler.upgradeAllRegistered();
     })
     .catch(err => console.error(err));
 
