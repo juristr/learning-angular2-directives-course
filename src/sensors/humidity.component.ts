@@ -3,11 +3,11 @@ import {Component, OnInit, ViewEncapsulation} from 'angular2/core';
 import { TabsComponent } from '../tabs/tabs.component';
 import { TabComponent } from '../tabs/tab.component';
 
-import { DonutChartDirective } from './donut-chart.directive';
+// import { DonutChartDirective } from './donut-chart.directive';
 
 @Component({
     selector: 'humidity-sensor',
-    directives: [TabsComponent, TabComponent, DonutChartDirective ],
+    directives: [TabsComponent, TabComponent ],
     encapsulation: ViewEncapsulation.None,
     template: `
     <tabs>
@@ -15,8 +15,7 @@ import { DonutChartDirective } from './donut-chart.directive';
             <div class="sensor-display--text"> {{ temperature }}°C</div>
         </tab>
         <tab title="Humidity">
-            <donut-chart [data]="humidityPercent" class="donut-style">
-            </donut-chart>
+            <p>Test here</p>
         </tab>
     </tabs>
     `,
