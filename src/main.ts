@@ -16,8 +16,7 @@ bootstrap(App, [
         ...HTTP_PROVIDERS,
         ...ROUTER_PROVIDERS,
         // provide(LocationStrategy, { useClass: HashLocationStrategy }),
-        provide(APP_BASE_HREF, {useValue : '/' }),
-        ...ELEMENT_PROBE_PROVIDERS
+        provide(APP_BASE_HREF, {useValue : '/' })
     ])
     .then(function(){
         console.log('running materialLite handlers');

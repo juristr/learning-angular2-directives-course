@@ -20,7 +20,7 @@ app.engine('.html', ng2engine);
 app.set('views', __dirname);
 app.set('view engine', 'html');
 
-// enableProdMode();
+enableProdMode();
 
 function ngApp(req, res) {
   let baseUrl = '/';
