@@ -1,28 +1,35 @@
 <html>
 <head>
+
+    <style>
+        strong {
+            font-size: 35px;
+        }
+    </style>
+
 </head>
 
 <body>
-    
-    <div id="hello-world-cmp">
-    </div>
-    
+
+    <div id="hello-world-cmp"></div>
+
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        // jQuery "component" code
-        $.fn.helloWorld = function(options) {
-            return this.each(function() {
-                $(this).append('<p>Hello <strong>' + options.who + '</strong></p>');
-            });
+
+    <script>
+        //jquery component code
+        $.fn.helloWorld  = function(options) {
+          return this.each(function() {
+             $(this).append('<p>Hello <strong>' + options.who + '</strong></p>');
+          });
         };
     </script>
+
     <script>
-        // bootstrap code
-        $(function() {
-            $('#hello-world-cmp').helloWorld({
-                who: 'World'
-            });            
+        //bootstrap component
+        $('#hello-world-cmp').helloWorld({
+            who: 'World'
         });
     </script>
+
 </body>
 </html>
