@@ -12,11 +12,11 @@ import { HelloAngular2 } from './helloAngular2';
     directives: [ HelloAngular2 ]
 })
 class AppCmp {
-    
+
     didGreet(value) {
         console.log(value);
     }
-    
+
 }
 
 
