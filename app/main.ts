@@ -3,15 +3,12 @@ import {Component} from 'angular2/core';
 
 import { HelloAngular2 } from './helloAngular2';
 
-
 @Component({
     selector: 'app',
-    template: `
-        <hello-angular who="Juri" (onSayHello)="didGreet($event);"></hello-angular>
-    `,
-    directives: [ HelloAngular2 ]
+    directives: [HelloAngular2],
+    template: '<hello-angular who="Juri" (onSayHello)="didGreet($event)"></hello-angular>'
 })
-class AppCmp {
+class AppComponent{
 
     didGreet(value) {
         console.log(value);
@@ -19,6 +16,5 @@ class AppCmp {
 
 }
 
-
-bootstrap(AppCmp, [])
+bootstrap(AppComponent, [])
     .catch(err => console.error(err));

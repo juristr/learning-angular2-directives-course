@@ -10,10 +10,8 @@ import { Component, Input, Output, EventEmitter } from 'angular2/core';
 export class HelloAngular2 {
     @Input() who: string;
     @Output() onSayHello: EventEmitter<string> = new EventEmitter();
-    
-    
+
     sayHello() {
         this.onSayHello.emit(`Hello, ${this.who}`);
     }
-    
 }
