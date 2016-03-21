@@ -1,13 +1,8 @@
-function PeopleDetailCtrl($routeParams, people) {
-    var vm = this;
+class PeopleDetailCtrl {
+    person;
 
-    activate();
-
-    ////////////////////////
-
-
-    function activate() {
-        vm.person = people.byId($routeParams.personId);
+    constructor($routeParams, people) {
+        this.person = people.byId($routeParams.personId);
     }
 
 };

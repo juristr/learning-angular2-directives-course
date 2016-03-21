@@ -1,3 +1,5 @@
+import upgradeAdapter from './core/upgradeAdapter';
+
 import coreModule from './core/core.module';
 import peopleDetailModule from './people_detail/peopleDetail.module';
 import peopleListModule from './people_list/peopleList.module';
@@ -21,4 +23,4 @@ angular.module('peopleApp', [
         });
     }]);
 
-angular.bootstrap(document.documentElement, ['peopleApp']);
+upgradeAdapter.bootstrap(document.documentElement, ['peopleApp']);

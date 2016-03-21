@@ -1,13 +1,10 @@
-function PeopleListCtrl(people) {
-    var vm = this;
-    vm.people = [];
-
-    activate();
+class PeopleListCtrl {
+    people = [];
 
     ////////////////////////
 
-    function activate() {
-        vm.people = people.query();
+    constructor(people) {
+        this.people = people.query();
     }
 
 }
