@@ -1,10 +1,19 @@
-
 angular.module('peopleApp.peopleList')
     .controller('PeopleListCtrl', PeopleListCtrl);
 
 
-function PeopleListCtrl($scope, people) {
-    $scope.people = people.query();
+function PeopleListCtrl(people) {
+    var vm = this;
+    vm.people = [];
+
+    activate();
+
+    ////////////////////////
+
+    function activate() {
+        vm.people = people.query();
+    }
+
 }
 
-PeopleListCtrl.$inject = ['$scope', 'people'];
+PeopleListCtrl.$inject = ['people'];

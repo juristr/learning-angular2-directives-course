@@ -10,11 +10,13 @@ angular.module('peopleApp', [
       $routeProvider.
         when('/people', {
           templateUrl: 'app/people_list/people-list.html',
-          controller: 'PeopleListCtrl'
+          controller: 'PeopleListCtrl',
+          controllerAs: 'vm'
         }).
         when('/people/:personId', {
           templateUrl: 'app/people_detail/people-detail.html',
-          controller: 'PeopleDetailCtrl'
+          controller: 'PeopleDetailCtrl',
+          controllerAs: 'vm'
         }).
         otherwise({
           redirectTo: '/people'
