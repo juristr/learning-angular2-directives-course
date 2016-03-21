@@ -1,10 +1,12 @@
-'use strict';
+import coreModule from './core/core.module';
+import peopleDetailModule from './people_detail/peopleDetail.module';
+import peopleListModule from './people_list/peopleList.module';
 
 angular.module('peopleApp', [
     'ngRoute',
-    'peopleApp.core',
-    'peopleApp.peopleList',
-    'peopleApp.peopleDetail'
+    coreModule.name,
+    peopleDetailModule.name,
+    peopleListModule.name
   ]).config(['$routeProvider',
     function($routeProvider) {
       $routeProvider.
@@ -18,3 +20,5 @@ angular.module('peopleApp', [
           redirectTo: '/people'
         });
     }]);
+
+angular.bootstrap(document.documentElement, ['peopleApp']);

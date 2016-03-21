@@ -1,6 +1,3 @@
-angular.module('peopleApp.core')
-    .factory('people', peopleService);
-
 var people = [
        {
             id: 1,
@@ -53,3 +50,5 @@ function peopleService() {
         return null;
     }
 };
+
+export default peopleService;
