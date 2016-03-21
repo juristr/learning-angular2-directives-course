@@ -1,6 +1,14 @@
 angular.module('peopleApp.peopleList')
-    .controller('PeopleListCtrl', PeopleListCtrl);
+    .directive('ppPeopleList', peopleListComponent);
 
+function peopleListComponent() {
+    return {
+        restrict: 'E',
+        templateUrl: 'app/people_list/people-list.html',
+        controller: PeopleListCtrl,
+        controllerAs: 'vm'
+    }
+}
 
 function PeopleListCtrl(people) {
     var vm = this;

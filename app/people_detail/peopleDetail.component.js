@@ -1,5 +1,14 @@
 angular.module('peopleApp.peopleDetail')
-    .controller('PeopleDetailCtrl', PeopleDetailCtrl);
+    .directive('ppPeopleDetail', peopleDetailComponent);
+
+function peopleDetailComponent() {
+    return {
+        restrict: 'E',
+        templateUrl: 'app/people_detail/people-detail.html',
+        controller: PeopleDetailCtrl,
+        controllerAs: 'vm'
+    }
+}
 
 
 function PeopleDetailCtrl($routeParams, people) {
