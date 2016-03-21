@@ -8,11 +8,11 @@ angular.module('peopleApp', [
     function($routeProvider) {
       $routeProvider.
         when('/people', {
-          templateUrl: 'partials/people-list.html',
+          templateUrl: 'app/partials/people-list.html',
           controller: 'PeopleListCtrl'
         }).
         when('/people/:personId', {
-          templateUrl: 'partials/people-detail.html',
+          templateUrl: 'app/partials/people-detail.html',
           controller: 'PeopleDetailCtrl'
         }).
         otherwise({
