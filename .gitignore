@@ -4,5 +4,7 @@ node_modules
 **/jspm_packages
 **/typings
 
+*.log
+
 app/**/*.js
 app/**/*.js.map
