@@ -13,19 +13,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Name</td>
-                <td class="mdl-data-table__cell--non-numeric">Description</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Name</td>
-                <td class="mdl-data-table__cell--non-numeric">Description</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Name</td>
-                <td class="mdl-data-table__cell--non-numeric">Description</td>
+            <tr *ngFor="#item of sensors">
+                <td class="mdl-data-table__cell--non-numeric">{{ item.name }}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{ item.description }}</td>
                 <td></td>
             </tr>
         </tbody>
