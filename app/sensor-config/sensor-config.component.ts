@@ -14,4 +14,11 @@ export class SensorConfigureComponent {
 
     }
 
+    refreshSensors() {
+        this.sensorService.discoverSensors()
+            .subscribe(data => {
+                this.sensors = data;
+            });
+    }
+
  }

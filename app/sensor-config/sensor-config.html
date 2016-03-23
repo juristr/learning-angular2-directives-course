@@ -4,7 +4,13 @@
         List of sensors
     </h1>
 
-    <table class="mdl-data-table mdl-js-data-table mdl-cell--12-col">
+    <div class="mdl-cell--12-col">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" (click)="refreshSensors()">
+            Scan for sensors
+        </button>
+    </div>
+
+    <table class="mdl-data-table mdl-js-data-table mdl-cell--12-col" *ngIf="sensors && sensors.length > 0">
         <thead>
             <tr>
                 <th class="mdl-data-table__cell--non-numeric">Name</th>
