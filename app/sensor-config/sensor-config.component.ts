@@ -1,9 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 
-interface Sensor {
-    name: string,
-    description: string
-}
+import { Sensor, SensorService } from '../core/sensors.service';
 
 @Component({
     selector: 'configure',
@@ -13,21 +10,8 @@ interface Sensor {
 export class SensorConfigureComponent {
     private sensors: Sensor[];
 
-    constructor() {
-        this.sensors = [
-            {
-                name: "S1-001XX",
-                description: "Temperature and humidity sensor"
-            },
-            {
-                name: "S1-002XX",
-                description: "Temperature and humidity sensor"
-            },
-            {
-                name: "S1-003XX",
-                description: "Temperature and humidity sensor"
-            }
-        ]
+    constructor(private sensorService: SensorService ) {
+
     }
 
  }

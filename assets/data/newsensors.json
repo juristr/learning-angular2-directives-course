@@ -1,0 +1,35 @@
+[
+    {
+        "name": "S1-001XX",
+        "description": "Temperature and humidity sensor",
+        "type": "temperature",
+        "data": {
+            "current": 21,
+            "min": 17,
+            "max": 23,
+            "avg": 20
+        }
+    },
+    {
+        "name": "S1-002XX",
+        "description": "Temperature and humidity sensor",
+        "type": "temperature",
+        "data": {
+            "current": 21,
+            "min": 17,
+            "max": 23,
+            "avg": 20
+        }
+    },
+    {
+        "name": "S1-003XX",
+        "description": "Temperature and humidity sensor",
+        "type": "temperature",
+        "data": {
+            "current": 21,
+            "min": 17,
+            "max": 23,
+            "avg": 20
+        }
+    }
+]

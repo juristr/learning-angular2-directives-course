@@ -6,10 +6,12 @@ import { SidebarComponent } from './shell/sidebar.component';
 import { DashboardComponent  } from './dashboard/dashboard.component';
 import { SensorConfigureComponent } from './sensor-config/sensor-config.component';
 
+import { SensorService } from './core/sensors.service';
 
 @Component({
   selector: 'app',
   directives: [ ROUTER_DIRECTIVES, HeaderComponent, SidebarComponent, DashboardComponent ],
+  providers: [ SensorService ],
   template: `
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
         <app-header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
