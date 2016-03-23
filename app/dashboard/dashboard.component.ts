@@ -136,4 +136,4 @@ import {Component} from 'angular2/core';
     </svg>
     `
 })
-export class DashboardCmp {}
+export class DashboardComponent {}

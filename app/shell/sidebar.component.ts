@@ -1,11 +1,11 @@
 import { Component } from 'angular2/core';
 
-import { AppMenuCmp } from './menu';
-import { UserProfileCmp } from './profile';
+import { MenuComponent } from './menu.component';
+import { UserProfileComponent } from '../user-profile/profile.component';
 
 @Component({
     selector: 'app-sidebar',
-    directives: [AppMenuCmp, UserProfileCmp],
+    directives: [MenuComponent, UserProfileComponent],
     template: `
         <user-profile class="demo-drawer-header">
         </user-profile>
@@ -13,4 +13,4 @@ import { UserProfileCmp } from './profile';
         </app-menu>
     `
 })
-export class SidebarCmp {}
+export class SidebarComponent {}

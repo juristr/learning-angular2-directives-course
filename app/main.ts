@@ -1,9 +1,9 @@
 import {bootstrap} from 'angular2/platform/browser';
 import * as materialLite from 'material-design-lite';
 
-import {App} from './app';
+import {AppComponent} from './app.component';
 
-bootstrap(App, [])
+bootstrap(AppComponent, [])
     .then(() => {
         materialLite.componentHandler.upgradeAllRegistered();
     })

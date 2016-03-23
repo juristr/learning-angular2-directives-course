@@ -16,4 +16,4 @@ import {Component} from 'angular2/core';
         <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
     `
 })
-export class AppMenuCmp {}
+export class MenuComponent {}
