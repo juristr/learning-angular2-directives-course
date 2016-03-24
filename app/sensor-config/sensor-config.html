@@ -10,6 +10,6 @@
         </button>
     </div>
 
-    <sensor-list [sensors]="sensors"></sensor-list>
+    <sensor-list [sensors]="sensors | filterSensor: 'humidity'"></sensor-list>
 
 </div>
