@@ -1,9 +1,11 @@
 import {Component, OnInit} from 'angular2/core';
 
 import { Sensor, SensorService } from '../core/sensors.service';
+import { SensorListComponent } from './sensor-list.component';
 
 @Component({
     selector: 'configure',
+    directives: [ SensorListComponent ],
     templateUrl: 'app/sensor-config/sensor-config.html'
 })
 
