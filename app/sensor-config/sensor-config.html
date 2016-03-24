@@ -10,6 +10,12 @@
         </button>
     </div>
 
-    <sensor-list [sensors]="sensors | filterSensor: 'humidity'"></sensor-list>
+    <hr />
+
+    <sensor-filter #filterCmp (filterChange)="refreshSensors($event)"></sensor-filter>
+
+    <hr />
+
+    <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory"></sensor-list>
 
 </div>
