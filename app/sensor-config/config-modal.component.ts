@@ -1,4 +1,4 @@
-import {Component } from 'angular2/core';
+import {Component, Output, EventEmitter } from 'angular2/core';
 
 @Component({
     selector: 'config-modal',
@@ -82,8 +82,9 @@ import {Component } from 'angular2/core';
 })
 
 export class ConfigModalComponent {
-
     private isOpen: boolean = false;
+
+    @Output() confirm: EventEmitter<any> = new EventEmitter();
 
     constructor() { }
 
@@ -93,6 +94,7 @@ export class ConfigModalComponent {
 
     ok() {
         this.isOpen = false;
+        this.confirm.emit(null);
     }
 
     cancel() {
