@@ -3,7 +3,7 @@ import {Component, Output, EventEmitter } from 'angular2/core';
 import { Sensor } from '../core/sensors.service';
 
 @Component({
-    selector: 'config-modal',
+    selector: 'modal',
     template: `
         <div class="md-dialog mdl-color--white mdl-shadow--2dp" [hidden]="!isOpen">
             <div class="md-dialog-content">
@@ -104,7 +104,7 @@ import { Sensor } from '../core/sensors.service';
     ]
 })
 
-export class ConfigModalComponent {
+export class ModalComponent {
     private isOpen: boolean = false;
     private sensorModel: Sensor = { name: '', description: '', type: '' };
     @Output() confirm: EventEmitter<Sensor> = new EventEmitter();
