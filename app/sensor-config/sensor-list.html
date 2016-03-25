@@ -12,7 +12,11 @@
             <td class="mdl-data-table__cell--non-numeric">{{ item.name }}</td>
             <td class="mdl-data-table__cell--non-numeric">{{ item.description }}</td>
             <td class="mdl-data-table__cell--non-numeric">{{ item.type }}</td>
-            <td></td>
+            <td class="mdl-data-table__cell--non-numeric">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" (click)="add(item)" *ngIf="showAdd">
+                    Add
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>
