@@ -16,7 +16,7 @@
 
     <hr />
 
-    <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" showAdd="true" (addItem)="configModal.open($event)"></sensor-list>
+    <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" showAdd="true" (addItem)="selectSensor($event, modal)"></sensor-list>
 
 </div>
 
@@ -34,4 +34,18 @@
     </div>
 </div>
 
-<modal #configModal (confirm)="addToDashboard($event)"></modal>
+<modal #configModal (confirm)="addToDashboard($event)">
+    <span title>Configure sensor</span>
+    <div content class="mdl-card__supporting-text">
+        <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'is-dirty': sensorModel.name}">
+                <input class="mdl-textfield__input" type="text" id="name" [(ngModel)]="sensorModel.name"  />
+                <label class="mdl-textfield__label" for="name">Name</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'is-dirty': sensorModel.description}">
+                <textarea class="mdl-textfield__input" [(ngModel)]="sensorModel.description"></textarea>
+                <label class="mdl-textfield__label" for="userpass">Description</label>
+            </div>
+        </form>
+    </div>
+</modal>

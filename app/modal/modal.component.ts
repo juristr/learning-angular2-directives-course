@@ -8,21 +8,10 @@ import { Sensor } from '../core/sensors.service';
         <div class="md-dialog mdl-color--white mdl-shadow--2dp" [hidden]="!isOpen">
             <div class="md-dialog-content">
                 <div class="typo-styles__demo mdl-typography--headline">
-                    {{ sensorModel.name }}
+                    <ng-content select="[title]"></ng-content>
                 </div>
                 <div class="md-dialog-content-body">
-                    <div class="mdl-card__supporting-text">
-                        <form action="#">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'is-dirty': sensorModel.name}">
-                                <input class="mdl-textfield__input" type="text" id="name" [(ngModel)]="sensorModel.name"  />
-                                <label class="mdl-textfield__label" for="name">Name</label>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'is-dirty': sensorModel.description}">
-                                <textarea class="mdl-textfield__input" [(ngModel)]="sensorModel.description"></textarea>
-                                <label class="mdl-textfield__label" for="userpass">Description</label>
-                            </div>
-                        </form>
-                    </div>
+                    <ng-content select="[content]"></ng-content>
                 </div>
             </div>
             <div class="md-dialog-actions">
