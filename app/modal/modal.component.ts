@@ -95,23 +95,17 @@ import { Sensor } from '../core/sensors.service';
 
 export class ModalComponent {
     private isOpen: boolean = false;
-    private sensorModel: Sensor = { name: '', description: '', type: '' };
-    @Output() confirm: EventEmitter<Sensor> = new EventEmitter();
+    @Output() confirm: EventEmitter<any> = new EventEmitter();
 
     constructor() { }
 
     open(sensor: Sensor) {
-        this.sensorModel = {
-            name: sensor.name,
-            description: sensor.description,
-            type: sensor.type
-        };
         this.isOpen = true;
     }
 
     ok() {
         this.isOpen = false;
-        this.confirm.emit(this.sensorModel);
+        this.confirm.emit();
     }
 
     cancel() {

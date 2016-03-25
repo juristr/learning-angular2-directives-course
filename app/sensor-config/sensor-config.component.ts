@@ -17,6 +17,7 @@ import { FilterSensor } from './filter-sensor.pipe';
 export class SensorConfigureComponent implements OnInit {
     private sensors: Sensor[] = [];
     private configuredSensors: Sensor[];
+    private sensorModel: Sensor;
 
     constructor(private sensorService: SensorService ) {
     }
@@ -33,8 +34,17 @@ export class SensorConfigureComponent implements OnInit {
             });
     }
 
+    selectSensor(sensor:Sensor, modal) {
+        // assign a copy of the sensor
+        this.sensorModel = {
+            name: sensor.name,
+            description: sensor.description,
+            type: sensor.type
+        };
+        modal.open();
+    }
+
     addToDashboard(sensor: Sensor) {
-        console.log('adding sensor', sensor);
         this.sensorService.addToDashboard(sensor);
     }
 
