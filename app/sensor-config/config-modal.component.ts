@@ -1,14 +1,37 @@
 import {Component, Output, EventEmitter } from 'angular2/core';
 
+import { Sensor } from '../core/sensors.service';
+
 @Component({
     selector: 'config-modal',
     template: `
         <div class="md-dialog mdl-color--white mdl-shadow--2dp" [hidden]="!isOpen">
             <div class="md-dialog-content">
-
+                <div class="typo-styles__demo mdl-typography--headline">
+                    {{ sensorModel.name }}
+                </div>
+                <div class="md-dialog-content-body">
+                    <div class="mdl-card__supporting-text">
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'is-dirty': sensorModel.name}">
+                                <input class="mdl-textfield__input" type="text" id="name" [(ngModel)]="sensorModel.name"  />
+                                <label class="mdl-textfield__label" for="name">Name</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'is-dirty': sensorModel.description}">
+                                <textarea class="mdl-textfield__input" [(ngModel)]="sensorModel.description"></textarea>
+                                <label class="mdl-textfield__label" for="userpass">Description</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="md-dialog-actions">
-
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="ok()">
+                    Ok
+                </button>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="cancel()">
+                    Cancel
+                </button>
             </div>
         </div>
         <div class="md-backdrop" [hidden]="!isOpen"></div>
@@ -83,18 +106,19 @@ import {Component, Output, EventEmitter } from 'angular2/core';
 
 export class ConfigModalComponent {
     private isOpen: boolean = false;
-
-    @Output() confirm: EventEmitter<any> = new EventEmitter();
+    private sensorModel: Sensor = { name: '', description: '', type: '' };
+    @Output() confirm: EventEmitter<Sensor> = new EventEmitter();
 
     constructor() { }
 
-    open() {
+    open(sensor: Sensor) {
+        this.sensorModel = sensor;
         this.isOpen = true;
     }
 
     ok() {
         this.isOpen = false;
-        this.confirm.emit(null);
+        this.confirm.emit(this.sensorModel);
     }
 
     cancel() {
