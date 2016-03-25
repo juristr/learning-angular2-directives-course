@@ -3,12 +3,13 @@ import {Component, OnInit} from 'angular2/core';
 import { Sensor, SensorService } from '../core/sensors.service';
 import { SensorListComponent } from './sensor-list.component';
 import { SensorFilterComponent } from './sensor-filter.component';
+import { ConfigModalComponent } from './config-modal.component';
 
 import { FilterSensor } from './filter-sensor.pipe';
 
 @Component({
     selector: 'configure',
-    directives: [ SensorListComponent, SensorFilterComponent ],
+    directives: [ SensorListComponent, SensorFilterComponent, ConfigModalComponent ],
     pipes: [ FilterSensor ],
     templateUrl: 'app/sensor-config/sensor-config.html'
 })

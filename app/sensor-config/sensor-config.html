@@ -16,7 +16,7 @@
 
     <hr />
 
-    <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" showAdd="true" (addItem)="addToDashboard($event)"></sensor-list>
+    <sensor-list [sensors]="sensors | filterSensor: filterCmp.selectedCategory" showAdd="true" (addItem)="configModal.open($event)"></sensor-list>
 
 </div>
 
@@ -33,3 +33,5 @@
         <p><i>No sensors configured yet</i></p>
     </div>
 </div>
+
+<config-modal #configModal (confirm)="addToDashboard($event)"></config-modal>

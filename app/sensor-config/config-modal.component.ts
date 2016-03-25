@@ -112,7 +112,11 @@ export class ConfigModalComponent {
     constructor() { }
 
     open(sensor: Sensor) {
-        this.sensorModel = sensor;
+        this.sensorModel = {
+            name: sensor.name,
+            description: sensor.description,
+            type: sensor.type
+        };
         this.isOpen = true;
     }
 
