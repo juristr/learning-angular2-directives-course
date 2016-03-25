@@ -5,7 +5,7 @@ import { Sensor } from '../core/sensors.service';
 @Component({
     selector: 'modal',
     template: `
-        <div class="md-dialog mdl-color--white mdl-shadow--2dp" [hidden]="!isOpen">
+        <div #dialog class="md-dialog mdl-color--white mdl-shadow--2dp" [hidden]="!isOpen" (keydown.esc)="cancel()" (keydown.enter)="ok()">
             <div class="md-dialog-content">
                 <div class="typo-styles__demo mdl-typography--headline">
                     <ng-content select="[title]"></ng-content>
@@ -22,6 +22,7 @@ import { Sensor } from '../core/sensors.service';
                     Cancel
                 </button>
             </div>
+            <div tabindex="0" (focus)="dialog.focus()"></div>
         </div>
         <div class="md-backdrop" [hidden]="!isOpen"></div>
     `,
