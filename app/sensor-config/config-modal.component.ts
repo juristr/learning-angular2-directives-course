@@ -87,4 +87,16 @@ export class ConfigModalComponent {
 
     constructor() { }
 
+    open() {
+        this.isOpen = true;
+    }
+
+    ok() {
+        this.isOpen = false;
+    }
+
+    cancel() {
+        this.isOpen = false;
+    }
+
 }
