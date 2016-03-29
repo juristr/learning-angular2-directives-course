@@ -1,6 +1,8 @@
 import {Component, } from 'angular2/core';
 import { Router, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
+import * as materialLite from 'material-design-lite';
+
 import { HeaderComponent } from './shell/header.component';
 import { SidebarComponent } from './shell/sidebar.component';
 import { DashboardComponent  } from './dashboard/dashboard.component';
@@ -29,4 +31,15 @@ import { SensorService } from './core/sensors.service';
   { path: '/configure', component: SensorConfigureComponent, as: 'Configure' },
   { path: '/**', redirectTo: ['Dashboard'] }
 ])
-export class AppComponent {}
+export class AppComponent {
+
+    constructor(private router: Router) {
+        // register to route changes
+        router.subscribe(() => {
+            // ..and run the MDL script to augment all new controls Angular has
+            // rendered
+            materialLite.componentHandler.upgradeAllRegistered();
+        });
+    }
+
+}
