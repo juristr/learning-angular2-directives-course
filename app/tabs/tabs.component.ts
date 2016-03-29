@@ -1,4 +1,4 @@
-import {Component, ContentChildren, QueryList, AfterContentInit } from 'angular2/core';
+import {Component, OnInit, ContentChildren, QueryList, AfterContentInit } from 'angular2/core';
 
 import { TabComponent } from './tab.component';
 
@@ -6,7 +6,7 @@ import { TabComponent } from './tab.component';
     selector: 'tabs',
     template: `
         <div class="tabs-bar">
-            <a href="javascript:;" class="tab" [class.is-active]="tab.isActive" *ngFor="#tab of tabs" (click)="selectTab(tab)">
+            <a href="javascript:;" [class.is-active]="tab.isActive" class="tab" *ngFor="#tab of tabs" (click)="selectTab(tab)">
                 {{ tab.title }}
             </a>
         </div>
@@ -78,34 +78,31 @@ import { TabComponent } from './tab.component';
         `
     ]
 })
-export class TabsComponent implements AfterContentInit {
+
+export class TabsComponent implements OnInit, AfterContentInit {
 
     @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
     constructor() { }
 
-    ngAfterContentInit() {
-        if (this.tabs.length > 0) {
-            if (!_hasActiveTab(this.tabs)) {
-                this.selectTab(this.tabs.first);
-            }
-        }
+    ngOnInit() { }
 
-        function _hasActiveTab(tabs: QueryList<TabComponent>) {
-            // check if some tab has set active via inputs
-            let activeTabs = tabs.filter((tab) => tab.isActive);
-            return Boolean(activeTabs.length);
+    ngAfterContentInit() {
+        // get all active tabs
+        let activeTabs = this.tabs.filter((tab) => tab.isActive);
+        if(activeTabs.length === 0){
+            this.selectTab(this.tabs.first);
         }
     }
+
 
     selectTab(tab: TabComponent) {
+        // deactivate all tabs
+        this.tabs.toArray().forEach((tab) => {
+           tab.isActive = false;
+        });
 
-        _deactivateAllTabs(this.tabs.toArray());
+        // activate current one
         tab.isActive = true;
-
-        function _deactivateAllTabs(tabs: TabComponent[]) {
-            tabs.forEach((tab) => tab.isActive = false);
-        }
     }
-
 }
