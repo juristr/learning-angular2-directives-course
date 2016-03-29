@@ -1,12 +1,12 @@
 import { Directive, Input, Output, HostListener, EventEmitter } from 'angular2/core';
 
-import { ConfigModalComponent  } from './modal.component';
+import { ModalComponent  } from './modal.component';
 
 @Directive({
     selector: '[open-with]'
 })
 export class OpenWithDirective {
-    @Input('open-with') modalInstance: ConfigModalComponent;
+    @Input('open-with') modalInstance: ModalComponent;
     @Output() confirm: EventEmitter<any> = new EventEmitter();
 
     @HostListener('click')
