@@ -4,41 +4,17 @@ import { WidgetComponent } from '../widget/widget.component';
 import { TabsComponent } from '../tabs/tabs.component';
 import { TabComponent } from '../tabs/tab.component';
 
+import { HumiditySensorComponent } from '../sensors/humidity.component';
+
 @Component({
     selector: 'dashboard',
-    directives: [ WidgetComponent, TabsComponent, TabComponent ],
+    directives: [ WidgetComponent, HumiditySensorComponent ],
     template: `
     <div class="mdl-grid demo-content">
         <widget>
-            <span widget-title>Test</span>
-            <div widget-body>
-                <tabs>
-                    <tab title="Starks">
-                        <ul>
-                            <li>Eddard</li>
-                            <li>Catelyn</li>
-                            <li>Robb</li>
-                            <li>Sansa</li>
-                            <li>Brandon</li>
-                            <li>Arya</li>
-                            <li>Rickon</li>
-                        </ul>
-                    </tab>
-                    <tab title="Lannisters">
-                        <ul>
-                            <li>Tywin</li>
-                            <li>Cersei</li>
-                            <li>Jamie</li>
-                            <li>Tyrion</li>
-                        </ul>
-                    </tab>
-                    <tab title="Targaryens">
-                        <ul>
-                            <li>Viserys</li>
-                            <li>Daenerys</li>
-                        </ul>
-                    </tab>
-                </tabs>
+            <div widget-title>Living Room</div>
+            <div class="mdl-cell mdl-cell--12-col" widget-body>
+                <humidity-sensor></humidity-sensor>
             </div>
         </widget>
         <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
