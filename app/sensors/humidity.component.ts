@@ -3,9 +3,11 @@ import {Component, OnInit, ViewEncapsulation} from 'angular2/core';
 import { TabsComponent } from '../tabs/tabs.component';
 import { TabComponent } from '../tabs/tab.component';
 
+import { DonutChartDirective } from './donut-chart.directive';
+
 @Component({
     selector: 'humidity-sensor',
-    directives: [TabsComponent, TabComponent ],
+    directives: [TabsComponent, TabComponent, DonutChartDirective ],
     encapsulation: ViewEncapsulation.None,
     template: `
     <tabs>
@@ -13,7 +15,7 @@ import { TabComponent } from '../tabs/tab.component';
             <div class="sensor-display--text"> {{ temperature }}°C</div>
         </tab>
         <tab title="Humidity">
-
+            <donut-chart [data]="humidityPercent"></donut-chart>
         </tab>
     </tabs>
     `,
@@ -29,6 +31,29 @@ import { TabComponent } from '../tabs/tab.component';
             overflow: hidden;
             line-height: 1;
         }
+
+
+        .donut-style {
+            width: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .progress-meter .background {
+           fill: #ccc;
+        }
+
+        .progress-meter .foreground {
+            fill: steelblue;
+        }
+
+        .progress-meter text {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
         `
     ]
 })
