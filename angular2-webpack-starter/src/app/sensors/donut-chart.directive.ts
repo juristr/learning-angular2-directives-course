@@ -1,4 +1,4 @@
-import { Component, Directive, OnInit, Input, ElementRef, OnChanges ChangeDetectionStrategy, SimpleChange } from 'angular2/core';
+import { Component, Directive, OnInit, Input, ElementRef, OnChanges, ChangeDetectionStrategy, SimpleChange } from 'angular2/core';
 import * as d3 from 'd3';
 
 @Directive({
