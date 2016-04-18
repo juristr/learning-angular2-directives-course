@@ -1,20 +1,20 @@
 <ion-navbar *navbar>
-    <button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Dashboard</ion-title>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>My First List</ion-title>
 </ion-navbar>
 
 <ion-content>
-    <ion-list>
-        <ion-card>
-            <ion-card-header>
-                Humidity
-            </ion-card-header>
-            <ion-card-content>
-                <donut-chart [data]="humidityPercent" class="donut-style">
-                </donut-chart>
-            </ion-card-content>
-        </ion-card>
-    </ion-list>
+  <ion-list>
+    <ion-card>
+      <ion-card-header>
+        Humidity
+      </ion-card-header>
+      <ion-card-content>
+        <donut-chart [data]="humidityPercent" class="donut-style">
+        </donut-chart>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
