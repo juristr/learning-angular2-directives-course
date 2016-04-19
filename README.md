@@ -1,4 +1,6 @@
-![](https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/bookretailers/9781785884702.jpg)
+<p align="center">
+  <img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/bookretailers/9781785884702.jpg" alt="Video Course: Learning Angular 2 directives" />
+</p>
 
 # Video Course: Learning Angular 2 directives
 
