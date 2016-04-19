@@ -5,29 +5,22 @@ import * as express from 'express';
 import {ng2engine, REQUEST_URL, NODE_LOCATION_PROVIDERS} from 'angular2-universal-preview';
 import {provide, enableProdMode} from 'angular2/core';
 import {APP_BASE_HREF, ROUTER_PROVIDERS} from 'angular2/router';
-import {App} from '../src/app.component';
 
-console.log('Running server from dir ' + __dirname);
+import {App} from './app/app';
 
 let app = express();
 let root = path.join(path.resolve(__dirname, '..'));
 
-// Serve static files
-app.use(express.static(root));
+enableProdMode();
 
 // Express View
 app.engine('.html', ng2engine);
 app.set('views', __dirname);
 app.set('view engine', 'html');
 
-enableProdMode();
-
 function ngApp(req, res) {
   let baseUrl = '/';
   let url = req.originalUrl || '/';
-
-  console.log('>' + url);
-
   res.render('index', {
     App,
     providers: [
@@ -40,13 +33,13 @@ function ngApp(req, res) {
   });
 }
 
+// Serve static files
+app.use(express.static(root));
+
 // Routes
 app.use('/', ngApp);
-// app.use('/', (req, res) => {
-//     res.send(200, 'hi');
-// //   res.render('index', { App });
-// });
-app.use('/configure', ngApp);
+app.use('/about', ngApp);
+app.use('/home', ngApp);
 
 // Server
 app.listen(3000, () => {

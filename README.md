@@ -1,21 +1,20 @@
-# Learning Angular 2 directives
+# Angular 2 Universal Starter
 
-## Install
+A minimal Angular 2 starter for Universal JavaScript using TypeScript and Webpack
 
-Install the latest dependencies using 
+> If you're looking for the repo from the AngularConnect talk look in the [angular-connect branch](https://github.com/angular/universal-starter/tree/angular-connect)  
+If you're looking for a SystemJS version of the repo look in the [systemjs branch](https://github.com/angular/universal-starter/tree/systemjs)
 
-```
-$ npm i
-```
+## Installation
 
-## Run
+* `npm install --global typescript typings webpack nodemon`
+* `npm install`
 
-```
-$ npm run
-```
+## Serve
 
-## Execute tests
+* `npm start` to build your client app and start a web server
+* `npm run build` to prepare a distributable bundle
 
-```
-$ npm test
-```
+## Watch files
+* `npm watch` to build your client app and start a web server
+
