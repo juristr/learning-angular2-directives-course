@@ -20,13 +20,15 @@ samples for each video can be found in the corresponding branches:
 - **Section 1: Getting Started**
   - The Course Overview
   - [Project Setup](https://github.com/juristr/learning-angular2-directives-course/tree/1.2-project-setup)
-  - [All about Components]()
+  - All about Components
+    - [components with jQuery](https://github.com/juristr/learning-angular2-directives-course/tree/1.3.1-jquery-component)
+    - [web components](https://github.com/juristr/learning-angular2-directives-course/tree/1.3.2-vanilla-components)
 - **Section 2: Angular 2 - Scratching the surface**
-  - [Upgrading from Angular 1.x]()
-  - [Hello Angular 2!]()
-  - [Feeding OUr Component with Data]()
+  - [Upgrading from Angular 1.x](https://github.com/juristr/learning-angular2-directives-course/tree/2.1-upgrade-ng-1)
+  - [Hello Angular 2!](https://github.com/juristr/learning-angular2-directives-course/tree/2.2-hello-angular2)
+  - [Feeding OUr Component with Data](https://github.com/juristr/learning-angular2-directives-course/tree/2.3-feeding-with-data)
 - **Section 3: HomeAuto - First Screens**
-  - [Decomposing and Building Application Foundation]()
+  - [Decomposing and Building Application Foundation](https://github.com/juristr/learning-angular2-directives-course/tree/3.1-decompose-app-foundation-v2)
   - [Scanning for New Sensors]()
   - [Creating a General Purpose Filter]()
 - **Section 4: Building Reusable Modals**
