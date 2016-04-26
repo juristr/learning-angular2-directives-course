@@ -18,7 +18,7 @@ This is the code repository for the [Learning Angular 2 Directives](https://www.
 samples for each video can be found in the corresponding branches:
 
 - **Section 1: Getting Started**
-  - [The Course Overview]()
+  - [The Course Overview](https://github.com/juristr/learning-angular2-directives-course/tree/1.2-project-setup)
   - [Project Setup]()
   - [All about Components]()
 - **Section 2: Angular 2 - Scratching the surface**
