@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/bookretailers/9781785884702.jpg" alt="Video Course: Learning Angular 2 directives" />
+  <a href="https://www.packtpub.com/web-development/learning-angular-2-directives-video">
+    <img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/bookretailers/9781785884702.jpg" alt="Video Course: Learning Angular 2 directives" />
+  </a>
+  <br />
+  <a href="https://www.packtpub.com/web-development/learning-angular-2-directives-video" style="font-size:24px;font-weight:bold">Add to cart</a>
 </p>
 
 # Video Course: Learning Angular 2 directives
