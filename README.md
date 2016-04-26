@@ -45,6 +45,11 @@ samples for each video can be found in the corresponding branches:
   - [Angular 2 Goes Mobile with Ionic 2]()
   - [Going Universal with Angular 2]()
 
-Also, follow me [on Twitter](https://twitter.com/juristr) for news and updates around Angular 2 and this video course!
 
-Cheers :+1:
+## Updates
+
+_There are currently no updates on the course._
+
+---
+
+Also, follow me [on Twitter](https://twitter.com/juristr) for news and updates around Angular 2 and this video course!
