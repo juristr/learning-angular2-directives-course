@@ -1,15 +1,19 @@
-Learning Angular 2 Directives
+<p align="center">
+  <a href="https://www.packtpub.com/web-development/learning-angular-2-directives-video">
+    <img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/bookretailers/9781785884702.jpg" alt="Video Course: Learning Angular 2 directives" />
+  </a>
+  <br />
+  <a href="https://www.packtpub.com/web-development/learning-angular-2-directives-video" style="font-size:24px;font-weight:bold">Add to cart</a>
+</p>
+
+# Video Course: Learning Angular 2 directives
+
+[by Juri Strumpflohner](https://twitter.com/juristr)
+
+_Learn how to build efficient Angular 2 directives with this fast and interactive guide_
+
 ---
 
-This is the code repository for my course on ["Learning Angular 2 Directives"](https://www.packtpub.com/).
+Hi there, stay tuned, this title will be published very soon! Meanwhile follow me [on Twitter](https://twitter.com/juristr) to get notified when it'll be available.
 
-## Structure
-
-The different sections structured into dedicated branches, so use your Git
-skills to switch between them :smiley:.
-
-1. Overview
-  - Section 1.1: Course overview
-  - Section 1.2: Project setup
-  - Section 1.3: All about components
-1. ...
+Cheers :+1:
