@@ -55,3 +55,7 @@ _There are currently no updates on the course._
 ---
 
 Also, follow me [on Twitter](https://twitter.com/juristr) for news and updates around Angular 2 and this video course!
+
+## Questions?
+
+Feel free to simply [open an issue](https://github.com/juristr/learning-angular2-directives-course/issues) on this repo here :smiley:
