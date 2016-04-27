@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://www.packtpub.com/web-development/learning-angular-2-directives-video">
+  <a href="https://goo.gl/iJKPUi">
     <img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/bookretailers/9781785884702.jpg" alt="Video Course: Learning Angular 2 directives" />
   </a>
   <br />
-  <a href="https://www.packtpub.com/web-development/learning-angular-2-directives-video" style="font-size:24px;font-weight:bold">Add to cart</a>
+  <a href="https://goo.gl/iJKPUi" style="font-size:24px;font-weight:bold">Add to cart</a>
 </p>
 
 # Video Course: Learning Angular 2 directives
@@ -14,7 +14,7 @@ _Learn how to build efficient Angular 2 directives with this fast and interactiv
 
 ---
 
-This is the code repository for the [Learning Angular 2 Directives](https://www.packtpub.com/web-development/learning-angular-2-directives-video) video course. The code
+This is the code repository for the [Learning Angular 2 Directives](https://goo.gl/iJKPUi) video course. The code
 samples for each video can be found in the corresponding branches:
 
 - **Section 1: Getting Started**
@@ -51,8 +51,6 @@ samples for each video can be found in the corresponding branches:
 ## Updates
 
 _There are currently no updates on the course._
-
----
 
 Also, follow me [on Twitter](https://twitter.com/juristr) for news and updates around Angular 2 and this video course!
 
