@@ -50,7 +50,7 @@ samples for each video can be found in the corresponding branches:
 
 ## Updates
 
-### Angular 2.0.0-beta.17 has been released
+### Breaking changes in `ngFor` - Angular 2.0.0-beta.17 release
 
 As [per the official changelog](https://github.com/angular/angular/blob/master/CHANGELOG.md#200-beta17-2016-04-28) this leads to a couple of breaking changes, mainly for `ngFor` loop.
 
@@ -71,6 +71,10 @@ As [per the official changelog](https://github.com/angular/angular/blob/master/C
 ```
 
 I'll update the according section code examples as soon as possible.
+
+### Breaking changes in `async` and `fakeAsync` for unit tests - Angular 2.0.0-beta.16 release
+
+Check the [official breaking change docs](https://github.com/angular/angular/blob/master/CHANGELOG.md#breaking-changes-1). I'll update the section code examples as soon as possible.
 
 Also, follow me [on Twitter](https://twitter.com/juristr) for news and updates around Angular 2 and this video course!
 
