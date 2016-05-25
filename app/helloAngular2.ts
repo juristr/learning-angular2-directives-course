@@ -1,9 +1,7 @@
-import { Component, View } from 'angular2/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'hello-angular'
-})
-@View({
+  selector: 'hello-angular',
   template: '<p>Hello, Angular2</p>'
 })
 export class HelloAngular2 {}
