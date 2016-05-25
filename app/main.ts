@@ -1,4 +1,4 @@
-import {bootstrap} from 'angular2/platform/browser';
+import { bootstrap } from '@angular/platform-browser-dynamic';
 import * as materialLite from 'material-design-lite';
 
 import {AppComponent} from './app.component';
