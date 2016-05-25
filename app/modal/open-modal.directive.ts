@@ -1,4 +1,4 @@
-import { Directive, Input, Output, HostListener, EventEmitter } from 'angular2/core';
+import { Directive, Input, Output, HostListener, EventEmitter } from '@angular/core';
 
 import { ModalComponent  } from './modal.component';
 
