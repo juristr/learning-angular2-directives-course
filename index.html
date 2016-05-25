@@ -31,31 +31,37 @@
 
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script src="node_modules/angular2/bundles/router.js"></script>
-    <script src="node_modules/angular2/bundles/http.dev.js"></script>
 
     <!-- 2. Configure SystemJS -->
     <script>
-      System.config({
-        packages: {
-          app: {
-            format: 'register',
-            defaultExtension: 'js',
-            "map":{
-               "material-design-lite": "/node_modules/material-design-lite/material.min.js"
+        System.config({
+            map: {
+                'app': 'app',
+                '@angular': 'node_modules/@angular',
+                'rxjs': 'node_modules/rxjs',
+                'material-design-lite': '/node_modules/material-design-lite/material.min.js'
+            },
+            packages: {
+                'app': { defaultExtension: 'js'},
+                'rxjs': { defaultExtension: 'js' },
+                'material-design-lite': { defaultExtension: 'js' },
+                // could be added programmatically, but clarity I've listed them here
+                '@angular/core' : { main: 'core.umd.js', defaultExtension: 'js' },
+                '@angular/common' : { main: 'common.umd.js', defaultExtension: 'js' },
+                '@angular/compiler' : { main: 'compiler.umd.js', defaultExtension: 'js' },
+                '@angular/http' : { main: 'http.umd.js', defaultExtension: 'js' },
+                '@angular/router' : { main: 'router.umd.js', defaultExtension: 'js' },
+                '@angular/platform-browser' : { main: 'platform-browser.umd.js', defaultExtension: 'js' },
+                '@angular/platform-browser-dynamic' : { main: 'platform-browser-dynamic.umd.js', defaultExtension: 'js' },
+                "@angular/upgrade": { main: 'upgrade.umd.js', defaultExtension: 'js' }
             }
-          }
-        }
-      });
-      System.import('app/main')
-            .then(null, console.error.bind(console));
+        });
+        System.import('app/main').then(null, console.error.bind(console));
     </script>
 </head>
 <body>

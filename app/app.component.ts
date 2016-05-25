@@ -1,5 +1,7 @@
-import {Component, } from 'angular2/core';
-import { Router, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
+
+import {Component} from '@angular/core';
+
+import { Router, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
 import { HeaderComponent } from './shell/header.component';
 import { SidebarComponent } from './shell/sidebar.component';
