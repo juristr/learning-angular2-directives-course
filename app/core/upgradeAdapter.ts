@@ -1,4 +1,4 @@
-import { UpgradeAdapter } from 'angular2/upgrade';
+import { UpgradeAdapter } from '@angular/upgrade';
 const upgradeAdapter = new UpgradeAdapter();
 
 export default upgradeAdapter;
