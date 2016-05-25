@@ -1,4 +1,4 @@
-import {Component, Output, EventEmitter } from 'angular2/core';
+import {Component, Output, EventEmitter } from '@angular/core';
 
 import { Sensor } from '../core/sensors.service';
 
@@ -107,7 +107,7 @@ import { Sensor } from '../core/sensors.service';
 export class ConfigModalComponent {
     private isOpen: boolean = false;
     private sensorModel: Sensor = { name: '', description: '', type: '' };
-    @Output() confirm: EventEmitter<Sensor> = new EventEmitter();
+    @Output() confirm: EventEmitter<Sensor> = new EventEmitter<Sensor>();
 
     constructor() { }
 

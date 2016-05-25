@@ -1,11 +1,11 @@
-import { Pipe } from 'angular2/core';
+import { Pipe } from '@angular/core';
 import { Sensor } from '../core/sensors.service';
 
 @Pipe({
     name: 'filterSensor'
 })
 export class FilterSensor {
-    transform(value, [category]:string[]) {
+    transform(value, category:string) {
         return value
                 .filter((entry: Sensor) => {
                     if(category && category !== '') {
