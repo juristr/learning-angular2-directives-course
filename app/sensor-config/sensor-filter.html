@@ -5,7 +5,7 @@
             <input type="radio" id="option-all" class="mdl-radio__button" name="options" value="" selected (change)="categoryChanged(undefined)">
             <span class="mdl-radio__label">All</span>
         </label>
-        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" *ngFor="#category of categories">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" *ngFor="let category of categories">
             <input type="radio" class="mdl-radio__button" name="options" value="{{category}}" (change)="categoryChanged(category)" />
             <span class="mdl-radio__label">{{category}}</span>
         </label>

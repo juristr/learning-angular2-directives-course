@@ -1,4 +1,4 @@
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 
 import { MenuComponent } from './menu.component';
 import { UserProfileComponent } from '../user-profile/profile.component';

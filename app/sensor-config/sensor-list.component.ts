@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from 'angular2/core';
+import {Component, Output, Input, OnInit, EventEmitter} from '@angular/core';
 
 import { Sensor } from '../core/sensors.service';
 import { ModalComponent  } from '../modal/modal.component';
