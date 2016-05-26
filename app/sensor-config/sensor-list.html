@@ -8,7 +8,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="#item of sensors">
+        <tr *ngFor="let item of sensors">
             <td class="mdl-data-table__cell--non-numeric">{{ item.name }}</td>
             <td class="mdl-data-table__cell--non-numeric">{{ item.description }}</td>
             <td class="mdl-data-table__cell--non-numeric">{{ item.type }}</td>

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from 'angular2/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 import { TabsComponent } from '../tabs/tabs.component';
 import { TabComponent } from '../tabs/tab.component';

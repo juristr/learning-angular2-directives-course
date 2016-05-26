@@ -1,4 +1,4 @@
-import { Directive, OnInit, Input, ElementRef } from 'angular2/core';
+import { Directive, OnInit, Input, ElementRef } from '@angular/core';
 import * as d3 from 'd3';
 
 @Directive({
