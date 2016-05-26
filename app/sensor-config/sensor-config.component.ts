@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit} from '@angular/core';
 
 import { Sensor, SensorService } from '../core/sensors.service';
 import { SensorListComponent } from './sensor-list.component';
