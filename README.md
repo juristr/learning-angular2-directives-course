@@ -14,7 +14,7 @@ _Learn how to build efficient Angular 2 directives with this fast and interactiv
 
 ---
 
-**IMPORTANT NOTE:** Check the [updates section](#updates) for questions related to 
+**IMPORTANT NOTE:** Check the [updates section](#updates) for questions related to (breaking) changes in the videos and source code with respect to future Angular releases.
 
 ---
 
