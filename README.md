@@ -56,7 +56,7 @@ samples for each video can be found in the corresponding branches:
 
 ## Updates
 
-This video has been published just before Angular hit RC.1. Unfortunately there might have been some breaking changes and thus some of the code shown in the video might no more be 100% accurate. But don't worry, I'm writing down all of the updates [in the changelog docs here](CHANGELOG.MD). 
+This video has been published just before Angular hit RC.1. Unfortunately there might have been some breaking changes and thus some of the code shown in the video might no more be 100% accurate. But don't worry, I'm writing down all of the updates [in the changelog docs here](https://github.com/juristr/learning-angular2-directives-course/blob/master/CHANGELOG.md). 
 
 You can obviously also ask me [here on the issue tracker of this repository](https://github.com/juristr/learning-angular2-directives-course/issues) or over on [on Twitter](https://twitter.com/juristr)!
 
