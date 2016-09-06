@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://goo.gl/iJKPUi">
-    <img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/bookretailers/9781785884702.jpg" alt="Video Course: Learning Angular 2 directives" />
+    <img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/bookretailers/9781785884702.png" alt="Video Course: Learning Angular 2 directives" />
   </a>
   <br />
   <a href="https://goo.gl/iJKPUi" style="font-size:24px;font-weight:bold">Add to cart</a>
