@@ -1,24 +1,24 @@
+# New updated course: [Learning Angular components (2nd edition)](https://goo.gl/zrGX8K)
+
 <p align="center">
-  <a href="https://goo.gl/iJKPUi">
-    <img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/bookretailers/9781785884702.png" alt="Video Course: Learning Angular 2 directives" />
+  <a href="https://goo.gl/zrGX8K">
+    <img src="https://juristr.com/blog/assets/imgs/banner-learning-angular-components.jpg" alt="Video Course: Learning Angular Components" />
   </a>
   <br />
-  <a href="https://goo.gl/iJKPUi" style="font-size:24px;font-weight:bold">Add to cart</a>
+  <a href="https://goo.gl/zrGX8K" style="font-size:24px;font-weight:bold">Add to cart</a>
 </p>
 
-# Video Course: Learning Angular 2 directives
+---
 
-[by Juri Strumpflohner](https://twitter.com/juristr)
+## IMPORTANT course update
 
-_Learn how to build efficient Angular 2 directives with this fast and interactive guide_
+I have **updated and published this video course** to the latest changes after the final release of Angular 2 in a new edition: ["Learning Angular components (2nd edition)"](https://goo.gl/zrGX8K).
+
+You can buy the course on the [official PacktPub site](https://goo.gl/zrGX8K). If you decide to stick with this course, it's totally fine, but I'd recommend looking at the new, updated source code which can be found here: https://github.com/juristr/learning-angular-components-course :smiley:.
 
 ---
 
-**IMPORTANT NOTE:** Check the [updates section](#updates) for questions related to (breaking) changes in the videos and source code with respect to future Angular releases.
-
----
-
-## Contents
+## Contents of the old "Learning Angular 2 directives course"
 
 This is the code repository for the [Learning Angular 2 Directives](https://goo.gl/iJKPUi) video course. The code
 samples for each video can be found in the corresponding branches:
@@ -53,13 +53,6 @@ samples for each video can be found in the corresponding branches:
   - [Angular 2 Goes Mobile with Ionic 2](https://github.com/juristr/learning-angular2-directives-course/tree/7.1-ionic)
   - [Going Universal with Angular 2](https://github.com/juristr/learning-angular2-directives-course/tree/7.2-angular-universal-v2)
 
-
-## Updates
-
-This video has been published just before Angular hit RC.1. Unfortunately there might have been some breaking changes and thus some of the code shown in the video might no more be 100% accurate. But don't worry, I'm writing down all of the updates [in the changelog docs here](https://github.com/juristr/learning-angular2-directives-course/blob/master/CHANGELOG.md). 
-
-You can obviously also ask me [here on the issue tracker of this repository](https://github.com/juristr/learning-angular2-directives-course/issues) or over on [on Twitter](https://twitter.com/juristr)!
-
 ## Questions?
 
-Feel free to simply [open an issue](https://github.com/juristr/learning-angular2-directives-course/issues) on this repo here :smiley:
+Feel free to simply [open an issue](https://github.com/juristr/learning-angular2-directives-course/issues) on this repo here or over on [on Twitter](https://twitter.com/juristr) :smiley:
