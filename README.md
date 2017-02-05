@@ -12,13 +12,15 @@
 
 ## IMPORTANT course update
 
-I have **updated and published this video course** to the latest changes after the final release of Angular 2 in a new edition: ["Learning Angular components (2nd edition)"](https://goo.gl/zrGX8K).
+I have **updated and re-published this video course** to take care of the latest changes after the final release of Angular 2: ["Learning Angular components (2nd edition)"](https://goo.gl/zrGX8K).
 
 You can buy the course on the [official PacktPub site](https://goo.gl/zrGX8K). If you decide to stick with this course, it's totally fine, but I'd recommend looking at the new, updated source code which can be found here: https://github.com/juristr/learning-angular-components-course :smiley:.
 
 ---
 
 ## Contents of the old "Learning Angular 2 directives course"
+
+**IMPORTANT: I highly recommend going to [the new video course repository](https://github.com/juristr/learning-angular-components-course) for an updated set of src files!**
 
 This is the code repository for the [Learning Angular 2 Directives](https://goo.gl/iJKPUi) video course. The code
 samples for each video can be found in the corresponding branches:
